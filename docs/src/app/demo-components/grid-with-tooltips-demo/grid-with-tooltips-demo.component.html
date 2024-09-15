@@ -1,0 +1,45 @@
+<div
+  #scrollableContainer
+  class="ngxTooltipDemo-grid"
+  style="overflow: auto; width: 100%; height: 100vh"
+>
+  <div
+    style="
+      display: grid;
+      grid-auto-rows: auto;
+      gap: 90px;
+      padding: 10px;
+      grid-template-columns: repeat(13, auto);
+    "
+  >
+    @for (cell of grid; track $index) {
+    <div style="position: relative">
+      <app-basic-tooltip
+        [arrow]="true"
+        [placementStrategy]="'default'"
+        [preferredPlacement]="placements[$index % placements.length]"
+        [scrollableContainer]="scrollableContainerElement()"
+        [enterDelay]="100"
+      >
+        <button
+          class="relative-element"
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+          "
+        >
+          Cell {{ $index + 1 }}
+          <span>{{ placements[$index % placements.length] }}</span>
+        </button>
+        <span class="message">
+          {{ $index + 1 }} Lorem ipsum dolor sit amet, consectetur adipiscing
+          elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+          Sed nisi.
+        </span>
+      </app-basic-tooltip>
+    </div>
+    }
+  </div>
+</div>

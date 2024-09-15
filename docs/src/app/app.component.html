@@ -1,0 +1,613 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<div #scrollableContainer class="main-wrapper">
+  <main class="main">
+    <div class="content">
+      <div class="title-wrapper">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 223 236"
+          width="32"
+          class="angular-logo"
+        >
+          <g _ngcontent-ng-c249881476="" clip-path="url(#a)">
+            <path
+              _ngcontent-ng-c249881476=""
+              fill="url(#b)"
+              d="m222.077 39.192-8.019 125.923L137.387 0l84.69 39.192Zm-53.105 162.825-57.933 33.056-57.934-33.056 11.783-28.556h92.301l11.783 28.556ZM111.039 62.675l30.357 73.803H80.681l30.358-73.803ZM7.937 165.115 0 39.192 84.69 0 7.937 165.115Z"
+            ></path>
+            <path
+              _ngcontent-ng-c249881476=""
+              fill="url(#c)"
+              d="m222.077 39.192-8.019 125.923L137.387 0l84.69 39.192Zm-53.105 162.825-57.933 33.056-57.934-33.056 11.783-28.556h92.301l11.783 28.556ZM111.039 62.675l30.357 73.803H80.681l30.358-73.803ZM7.937 165.115 0 39.192 84.69 0 7.937 165.115Z"
+            ></path>
+          </g>
+          <defs _ngcontent-ng-c249881476="">
+            <linearGradient
+              _ngcontent-ng-c249881476=""
+              id="b"
+              x1="49.009"
+              x2="225.829"
+              y1="213.75"
+              y2="129.722"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop _ngcontent-ng-c249881476="" stop-color="#E40035"></stop>
+              <stop
+                _ngcontent-ng-c249881476=""
+                offset=".24"
+                stop-color="#F60A48"
+              ></stop>
+              <stop
+                _ngcontent-ng-c249881476=""
+                offset=".352"
+                stop-color="#F20755"
+              ></stop>
+              <stop
+                _ngcontent-ng-c249881476=""
+                offset=".494"
+                stop-color="#DC087D"
+              ></stop>
+              <stop
+                _ngcontent-ng-c249881476=""
+                offset=".745"
+                stop-color="#9717E7"
+              ></stop>
+              <stop
+                _ngcontent-ng-c249881476=""
+                offset="1"
+                stop-color="#6C00F5"
+              ></stop>
+            </linearGradient>
+            <linearGradient
+              _ngcontent-ng-c249881476=""
+              id="c"
+              x1="41.025"
+              x2="156.741"
+              y1="28.344"
+              y2="160.344"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop _ngcontent-ng-c249881476="" stop-color="#FF31D9"></stop>
+              <stop
+                _ngcontent-ng-c249881476=""
+                offset="1"
+                stop-color="#FF5BE1"
+                stop-opacity="0"
+              ></stop>
+            </linearGradient>
+            <clipPath _ngcontent-ng-c249881476="" id="a">
+              <path
+                _ngcontent-ng-c249881476=""
+                fill="#fff"
+                d="M0 0h223v236H0z"
+              ></path>
+            </clipPath>
+          </defs>
+        </svg>
+        <h1>{{ title }}</h1>
+      </div>
+      <p>
+        Tooltips display informative text when users hover over, focus on, or
+        tap an element.
+      </p>
+    </div>
+
+    <div id="how-to-use-it-demo" [title]="'How to use it?'">
+      <h2>How to use it?</h2>
+
+      <ol class="demo-info">
+        <li>
+          Create a component (in the example we will use
+          <code>app-basic-tooltip</code> ). This component should handle the
+          open and close state of the tooltip.
+        </li>
+
+        <li>
+          Add in the template the <code>app-ngx-tooltip</code> component:
+          <pre>{{ tooltipHtmlCode }}</pre>
+        </li>
+
+        <li>
+          Import <code>TooltipComponent</code> in the <code>imports</code> array
+        </li>
+
+        <li>
+          Add in the <code>ts</code> file the following code that handles the
+          open and close state of the tooltip:
+          <pre [innerHTML]="openCloseCode"></pre>
+        </li>
+
+        <li>
+          You can also add other properties. Please see the API documentation
+          and use them when needed.
+        </li>
+
+        <li>
+          Add the <code>app-basic-tooltip</code> anywhere you need it in the
+          application. Use it like that:
+          <pre>{{ basicTooltipHTMLCode }}</pre>
+        </li>
+
+        <li>
+          If you want to customize it add a class to
+          <code>tooltipRootClass</code> prop. In the css/scss file style the
+          tooltip.
+          <div>
+            Under the custom class you can customize the tooltip by using the
+            following classes:
+            <ul>
+              <li>for arrow: <code>.ngxTooltip-arrow</code></li>
+              <li>for tooltip content: <code>.ngxTooltip-tooltip</code></li>
+            </ul>
+          </div>
+
+          <div>
+            NOTE: The custom style should be globally to be applied. In this
+            case we need to add in the component decorator the encapsulation of
+            the css/scss to be with <code>None</code> value:
+            <br />
+            <code>encapsulation: ViewEncapsulation.None</code>
+          </div>
+
+          <br />
+          This is an example:
+          <pre>{{ scssCode }}</pre>
+        </li>
+
+        <li>
+          NOTE: If you want the tooltip to be relative to the scrollable
+          container you should provide it in the
+          <code>scrollableContainer</code> prop.
+          <p>
+            In the ts file: <br />
+            <code>{{ scrollableContainerCode }}</code>
+          </p>
+
+          <p>
+            In the template add as input binding the scrollable container at the
+            <code>app-ngx-tooltip</code> component:
+            <code>[scrollableContainer]="scrollableContainer()"</code>
+          </p>
+        </li>
+
+        <li>See the following examples...</li>
+      </ol>
+    </div>
+
+    <app-demo
+      id="basic-tooltip-demo"
+      [title]="'Basic Tooltip'"
+      [codeLink]="'#'"
+    >
+      <div class="demo-content">
+        <app-basic-tooltip [scrollableContainer]="scrollableContainerElement()">
+          <button class="relative-element">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="rgb(25, 118, 210)"
+            >
+              <path
+                d="M304.62-160q-26.85 0-45.74-18.88Q240-197.77 240-224.62V-720h-40v-40h160v-30.77h240V-760h160v40h-40v495.38q0 27.62-18.5 46.12Q683-160 655.38-160H304.62ZM680-720H280v495.38q0 10.77 6.92 17.7 6.93 6.92 17.7 6.92h350.76q9.24 0 16.93-7.69 7.69-7.69 7.69-16.93V-720ZM392.31-280h40v-360h-40v360Zm135.38 0h40v-360h-40v360ZM280-720v520-520Z"
+              />
+            </svg>
+          </button>
+          <span class="message"> Add </span>
+        </app-basic-tooltip>
+      </div>
+    </app-demo>
+
+    <app-demo id="demo-0" [title]="'Customization'" [codeLink]="'#'">
+      <p class="demo-info">
+        Here are some examples of customizing the component.
+      </p>
+
+      <div
+        class="demo-content"
+        style="display: flex; gap: 0.5rem; flex-wrap: wrap"
+      >
+        <app-light-tooltip-customized
+          [scrollableContainer]="scrollableContainerElement()"
+        />
+
+        <app-bootstrap-tooltip-customized
+          [scrollableContainer]="scrollableContainerElement()"
+        />
+
+        <app-html-content-tooltip-customized
+          [scrollableContainer]="scrollableContainerElement()"
+        />
+
+        <app-tooltip-with-close-action-demo
+          [scrollableContainer]="scrollableContainerElement()"
+        />
+      </div>
+    </app-demo>
+
+    <app-demo id="demo-with-arrow" [title]="'Arrow tooltips'" [codeLink]="'#'">
+      <p class="demo-info">
+        You can use the <code>arrow</code> prop to give your tooltip an arrow
+        indicating which element it refers to.
+      </p>
+
+      <div
+        class="demo-content"
+        style="display: flex; gap: 0.5rem; flex-wrap: wrap"
+      >
+        <app-tooltip-with-arrow
+          [scrollableContainer]="scrollableContainerElement()"
+        />
+      </div>
+    </app-demo>
+
+    <app-demo
+      id="demo-with-distance-from-anchor"
+      [title]="'Distance from anchor'"
+      [codeLink]="'#'"
+    >
+      <p class="demo-info">
+        You can use the <code>arrow</code> prop to give your tooltip an arrow
+        indicating which element it refers to.
+      </p>
+
+      <div
+        class="demo-content"
+        style="display: flex; gap: 0.5rem; flex-wrap: wrap"
+      >
+        <app-tooltip-with-distance-from-anchor
+          [scrollableContainer]="scrollableContainerElement()"
+        />
+      </div>
+    </app-demo>
+
+    <app-demo id="triggers-demo" [title]="'Triggers'" [codeLink]="'#'">
+      <div
+        class="demo-content"
+        style="display: flex; gap: 0.5rem; flex-wrap: wrap"
+      >
+        <app-basic-tooltip
+          [scrollableContainer]="scrollableContainerElement()"
+          [triggerActions]="['hover']"
+        >
+          <button class="relative-element">HOVER</button>
+          <span class="message"> Add </span>
+        </app-basic-tooltip>
+
+        <app-basic-tooltip
+          [scrollableContainer]="scrollableContainerElement()"
+          [triggerActions]="['focus']"
+        >
+          <button class="relative-element">FOCUS</button>
+          <span class="message"> Add </span>
+        </app-basic-tooltip>
+
+        <app-basic-tooltip
+          [scrollableContainer]="scrollableContainerElement()"
+          [triggerActions]="['click']"
+        >
+          <button class="relative-element">CLICK</button>
+          <span class="message"> Add </span>
+        </app-basic-tooltip>
+      </div>
+    </app-demo>
+
+    <app-demo
+      id="variable-width-demo"
+      [title]="'Variable width'"
+      [codeLink]="'#'"
+    >
+      <div
+        class="demo-content"
+        style="display: flex; gap: 0.5rem; flex-wrap: wrap"
+      >
+        <app-basic-tooltip [scrollableContainer]="scrollableContainerElement()">
+          <button class="relative-element">Custom Width [200px]</button>
+          <div class="message" style="max-width: 200px">
+            Aliquam eget finibus ante, non facilisis lectus. Sed vitae dignissim
+            est, vel aliquam tellus. Praesent non nunc mollis, fermentum neque
+            at, semper arcu. Nullam eget est sed sem iaculis gravida eget vitae
+            justo.
+          </div>
+        </app-basic-tooltip>
+
+        <app-basic-tooltip [scrollableContainer]="scrollableContainerElement()">
+          <button class="relative-element">Custom Width [500px]</button>
+          <div class="message" style="max-width: 500px">
+            Aliquam eget finibus ante, non facilisis lectus. Sed vitae dignissim
+            est, vel aliquam tellus. Praesent non nunc mollis, fermentum neque
+            at, semper arcu. Nullam eget est sed sem iaculis gravida eget vitae
+            justo.
+          </div>
+        </app-basic-tooltip>
+
+        <app-no-wrapping-width-tooltip />
+      </div>
+    </app-demo>
+
+    <app-demo id="interactive-demo" [title]="'Interactive'" [codeLink]="'#'">
+      <p class="demo-info">
+        Tooltips are interactive by default (to pass
+        <a
+          href="https://www.w3.org/TR/WCAG21/#content-on-hover-or-focus"
+          target="_blank"
+          rel="noopener nofollow"
+          >WCAG 2.1 success criterion 1.4.13</a
+        >). It won't close when the user hovers over the tooltip before the
+        leaveDelay is expired.
+      </p>
+
+      <div class="demo-content">
+        <app-basic-tooltip [scrollableContainer]="scrollableContainerElement()">
+          <button class="relative-element">Default - interactive</button>
+          <span class="message">
+            Hover this tooltip and select its content
+          </span>
+        </app-basic-tooltip>
+      </div>
+    </app-demo>
+
+    <app-demo
+      id="disabled-elements-demo"
+      [title]="'Disabled elements'"
+      [codeLink]="'#'"
+    >
+      <p class="demo-info">
+        For a disabled button it will work by default. You don't need to add
+        extra wrappers over button to display it's tooltip.
+      </p>
+
+      <div class="demo-content">
+        <app-basic-tooltip [scrollableContainer]="scrollableContainerElement()">
+          <button class="relative-element" disabled>A Disabled Button</button>
+          <span class="message"> Add </span>
+        </app-basic-tooltip>
+      </div>
+    </app-demo>
+
+    <app-demo id="transitions-demo" [title]="'Transitions'" [codeLink]="'#'">
+      <p class="demo-info">Use a different transition.</p>
+
+      <div
+        class="demo-content"
+        style="display: flex; gap: 0.5rem; flex-wrap: wrap"
+      >
+        <app-basic-tooltip [scrollableContainer]="scrollableContainerElement()">
+          <button class="relative-element">GROW (default)</button>
+          <span class="message"> Add </span>
+        </app-basic-tooltip>
+
+        <app-fade-transition-tooltip
+          [scrollableContainer]="scrollableContainerElement()"
+        />
+
+        <app-zoom-transition-tooltip
+          [scrollableContainer]="scrollableContainerElement()"
+        />
+      </div>
+    </app-demo>
+
+    <app-demo
+      id="showing-and-hiding-with-delay-demo"
+      [title]="'Showing and hiding with delay'"
+      [codeLink]="'#'"
+    >
+      <p class="demo-info">
+        The tooltip is normally shown immediately when the user's mouse hovers
+        over the element, and hides immediately when the user's mouse leaves. A
+        delay in showing or hiding the tooltip can be added through the
+        <code>enterDelay</code> and <code>leaveDelay</code> props.
+      </p>
+
+      <div
+        class="demo-content"
+        style="display: flex; gap: 0.5rem; flex-wrap: wrap"
+      >
+        <app-basic-tooltip [scrollableContainer]="scrollableContainerElement()">
+          <button class="relative-element">Default - [100ms, 150ms]</button>
+          <span class="message"> Add </span>
+        </app-basic-tooltip>
+
+        <app-basic-tooltip
+          [scrollableContainer]="scrollableContainerElement()"
+          [enterDelay]="500"
+          [leaveDelay]="200"
+        >
+          <button class="relative-element">Custom - [500ms, 200ms]</button>
+          <span class="message"> Add </span>
+        </app-basic-tooltip>
+      </div>
+    </app-demo>
+
+    <app-demo
+      id="positioned-tooltips"
+      [title]="'Positioned tooltips'"
+      [codeLink]="'#'"
+    >
+      <p class="demo-info">
+        The Tooltip has 12 placement choices. They rely on motion emanating from
+        the source to convey direction.
+      </p>
+
+      <app-positioned-tooltips
+        class="demo-content"
+        [scrollableContainer]="scrollableContainerElement()"
+      />
+    </app-demo>
+
+    <app-demo
+      id="positioned-tooltips-with-long-content-demo"
+      [title]="'Positioned Tooltips With Long Content'"
+      [codeLink]="'#'"
+    >
+      <p class="demo-info">Tooltips with long content.</p>
+
+      <div class="demo-content">
+        <app-positioned-tooltip-with-long-content
+          [scrollableContainer]="scrollableContainerElement()"
+        />
+      </div>
+    </app-demo>
+
+    <app-demo
+      id="demo-2"
+      [title]="'Square Corners With Tooltips Demo'"
+      [codeLink]="'#'"
+    >
+      <app-tooltip-corners-square-demo
+        class="demo-content"
+        [scrollableContainer]="scrollableContainerElement()"
+      />
+    </app-demo>
+
+    <app-demo id="demo-3" [title]="'Grid With Tooltips Demo'" [codeLink]="'#'">
+      <app-grid-with-tooltips-demo class="demo-content" />
+    </app-demo>
+
+    <app-demo
+      id="table-demo"
+      [title]="'Table With Tooltips Demo'"
+      [codeLink]="'#'"
+    >
+      <app-table-with-tooltips-demo class="demo-content" />
+    </app-demo>
+  </main>
+
+  <div class="toc-container">
+    <aside class="toc">
+      <nav>
+        <div class="document-toc-container">
+          <section class="document-toc">
+            <header>
+              <h2 class="document-toc-heading">Tooltip demos</h2>
+            </header>
+            <ul class="document-toc-list">
+              <li class="document-toc-item">
+                <a class="document-toc-link" href="#how-to-use-it-demo">
+                  How to use it?
+                </a>
+              </li>
+
+              <li class="document-toc-item">
+                <a class="document-toc-link" href="#basic-tooltip-demo">
+                  Basic tooltip
+                </a>
+              </li>
+
+              <li class="document-toc-item">
+                <a class="document-toc-link" href="#demo-0"> Customization </a>
+              </li>
+
+              <li class="document-toc-item">
+                <a class="document-toc-link" href="#demo-with-arrow">
+                  Arrow tooltips
+                </a>
+              </li>
+
+              <li class="document-toc-item">
+                <a
+                  class="document-toc-link"
+                  href="#demo-with-distance-from-anchor"
+                >
+                  Distance from anchor
+                </a>
+              </li>
+
+              <li class="document-toc-item">
+                <a class="document-toc-link" href="#triggers-demo">
+                  Triggers
+                </a>
+              </li>
+
+              <li class="document-toc-item">
+                <a class="document-toc-link" href="#variable-width-demo">
+                  Variable width
+                </a>
+              </li>
+
+              <li class="document-toc-item">
+                <a class="document-toc-link" href="#interactive-demo">
+                  Interactive
+                </a>
+              </li>
+
+              <li class="document-toc-item">
+                <a class="document-toc-link" href="#disabled-elements-demo">
+                  Disabled elements
+                </a>
+              </li>
+
+              <li class="document-toc-item">
+                <a class="document-toc-link" href="#transitions-demo">
+                  Transitions
+                </a>
+              </li>
+
+              <li class="document-toc-item">
+                <a
+                  class="document-toc-link"
+                  href="#showing-and-hiding-with-delay-demo"
+                >
+                  Showing And Hiding With Delay
+                </a>
+              </li>
+
+              <li class="document-toc-item">
+                <a class="document-toc-link" href="#positioned-tooltips">
+                  Positioned tooltips
+                </a>
+              </li>
+
+              <li class="document-toc-item">
+                <a
+                  class="document-toc-link"
+                  href="#positioned-tooltips-with-long-content-demo"
+                >
+                  Positioned tooltips with long content
+                </a>
+              </li>
+
+              <li class="document-toc-item">
+                <a class="document-toc-link" href="#demo-2">
+                  Square Corners With Tooltips
+                </a>
+              </li>
+
+              <li class="document-toc-item">
+                <a class="document-toc-link" href="#demo-3">
+                  Grid With Tooltips
+                </a>
+              </li>
+
+              <li class="document-toc-item">
+                <a class="document-toc-link" href="#table-demo">
+                  Table With Tooltips
+                </a>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </nav>
+    </aside>
+  </div>
+</div>
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<router-outlet />

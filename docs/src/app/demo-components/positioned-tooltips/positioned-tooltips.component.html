@@ -1,0 +1,128 @@
+<div class="Root-demo-tooltip">
+  <div class="top-section">
+    <app-basic-tooltip
+      [arrow]="true"
+      [scrollableContainer]="scrollableContainer()"
+      [preferredPlacement]="'top-start'"
+      [placementStrategy]="'default'"
+    >
+      <button class="relative-element" [tabIndex]="-1">top-start</button>
+      <div class="message">Top start</div>
+    </app-basic-tooltip>
+    <app-basic-tooltip
+      [arrow]="true"
+      [scrollableContainer]="scrollableContainer()"
+      [preferredPlacement]="'top'"
+      [placementStrategy]="'default'"
+    >
+      <button class="relative-element">top</button>
+      <div class="message">Top</div>
+    </app-basic-tooltip>
+    <app-basic-tooltip
+      [arrow]="true"
+      [scrollableContainer]="scrollableContainer()"
+      [preferredPlacement]="'top-end'"
+      [placementStrategy]="'default'"
+    >
+      <button class="relative-element">top-end</button>
+      <div class="message">Top end</div>
+    </app-basic-tooltip>
+  </div>
+
+  <div class="left-section">
+    <app-basic-tooltip
+      [arrow]="true"
+      [scrollableContainer]="scrollableContainer()"
+      [preferredPlacement]="'left-start'"
+      [placementStrategy]="'default'"
+    >
+      <button class="relative-element">left-start</button>
+      <div class="message">Left start</div>
+    </app-basic-tooltip>
+    <app-basic-tooltip
+      [arrow]="true"
+      [scrollableContainer]="scrollableContainer()"
+      [preferredPlacement]="'left'"
+      [placementStrategy]="'default'"
+    >
+      <button class="relative-element">left</button>
+      <div class="message">Left</div>
+    </app-basic-tooltip>
+    <app-basic-tooltip
+      [arrow]="true"
+      [scrollableContainer]="scrollableContainer()"
+      [preferredPlacement]="'left-end'"
+      [placementStrategy]="'default'"
+    >
+      <button class="relative-element">left-end</button>
+      <div class="message">Left end</div>
+    </app-basic-tooltip>
+  </div>
+
+  <div class="right-section">
+    <app-basic-tooltip
+      [arrow]="true"
+      [scrollableContainer]="scrollableContainer()"
+      [preferredPlacement]="'right-start'"
+      [placementStrategy]="'default'"
+    >
+      <button class="relative-element">right-start</button>
+      <div class="message">Right start</div>
+    </app-basic-tooltip>
+    <app-basic-tooltip
+      [arrow]="true"
+      [scrollableContainer]="scrollableContainer()"
+      [preferredPlacement]="'right'"
+      [placementStrategy]="'default'"
+    >
+      <button class="relative-element">right</button>
+      <div class="message">Right</div>
+    </app-basic-tooltip>
+    <app-basic-tooltip
+      [arrow]="true"
+      [scrollableContainer]="scrollableContainer()"
+      [preferredPlacement]="'right-end'"
+      [placementStrategy]="'default'"
+    >
+      <button class="relative-element">right-end</button>
+      <div class="message">Right end</div>
+    </app-basic-tooltip>
+  </div>
+
+  <div class="bottom-section">
+    <app-basic-tooltip
+      [arrow]="true"
+      [scrollableContainer]="scrollableContainer()"
+      [placementStrategy]="'default'"
+      [preferredPlacement]="'bottom-start'"
+      [dialogOffset]="30"
+    >
+      <button class="relative-element">bottom-start with offset 30</button>
+      <div class="message">Bottom start with offset 30</div>
+    </app-basic-tooltip>
+
+    <app-basic-tooltip
+      [arrow]="true"
+      [scrollableContainer]="scrollableContainer()"
+      [placementStrategy]="'considerKeepingCurrentPlacement'"
+      [preferredPlacement]="'bottom'"
+      [dialogMinMaxSizes]="{
+        dialogMinHeight: 50,
+        dialogMaxHeight: 100,
+      }"
+      [dialogOffset]="20"
+    >
+      <button class="relative-element">bottom</button>
+      <div class="message">Bottom</div>
+    </app-basic-tooltip>
+    <app-basic-tooltip
+      [arrow]="true"
+      [scrollableContainer]="scrollableContainer()"
+      [preferredPlacement]="'bottom-end'"
+      [placementStrategy]="'default'"
+    >
+      <button class="relative-element">bottom-end</button>
+      <div class="message">Bottom end</div>
+    </app-basic-tooltip>
+  </div>
+</div>

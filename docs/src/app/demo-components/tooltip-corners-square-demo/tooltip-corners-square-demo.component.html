@@ -1,0 +1,118 @@
+<div style="position: relative; height: 100vh; width: 100%">
+  <div
+    style="
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+    "
+  >
+    <app-basic-tooltip
+      [arrow]="true"
+      [placementStrategy]="'default'"
+      [preferredPlacement]="'top'"
+      [scrollableContainer]="scrollableContainer()"
+    >
+      <button class="relative-element">Top</button>
+      <span class="message">Top Tooltip</span>
+    </app-basic-tooltip>
+  </div>
+  <div
+    style="
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+    "
+  >
+    <app-basic-tooltip
+      [arrow]="true"
+      [placementStrategy]="'default'"
+      [preferredPlacement]="'bottom'"
+      [scrollableContainer]="scrollableContainer()"
+    >
+      <button class="relative-element">Bottom</button>
+      <span class="message">Bottom Tooltip</span>
+    </app-basic-tooltip>
+  </div>
+  <div
+    style="
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+    "
+  >
+    <app-basic-tooltip
+      [arrow]="true"
+      [placementStrategy]="'default'"
+      [preferredPlacement]="'left'"
+      [scrollableContainer]="scrollableContainer()"
+    >
+      <button class="relative-element">Left</button>
+      <span class="message">Left Tooltip</span>
+    </app-basic-tooltip>
+  </div>
+  <div
+    style="
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+    "
+  >
+    <app-basic-tooltip
+      [arrow]="true"
+      [placementStrategy]="'default'"
+      [preferredPlacement]="'right'"
+      [scrollableContainer]="scrollableContainer()"
+    >
+      <button class="relative-element">Right</button>
+      <span class="message">Right Tooltip</span>
+    </app-basic-tooltip>
+  </div>
+  <div style="position: absolute; top: 10px; left: 10px">
+    <app-basic-tooltip
+      [arrow]="true"
+      [placementStrategy]="'default'"
+      [preferredPlacement]="'top-start'"
+      [scrollableContainer]="scrollableContainer()"
+    >
+      <button class="relative-element">Top Left</button>
+      <span class="message">Top Left Tooltip</span>
+    </app-basic-tooltip>
+  </div>
+  <div style="position: absolute; top: 10px; right: 10px">
+    <app-basic-tooltip
+      [arrow]="true"
+      [placementStrategy]="'default'"
+      [preferredPlacement]="'top-end'"
+      [scrollableContainer]="scrollableContainer()"
+    >
+      <button class="relative-element">Top Right</button>
+      <span class="message">Top Right Tooltip</span>
+    </app-basic-tooltip>
+  </div>
+  <div style="position: absolute; bottom: 10px; left: 10px">
+    <app-basic-tooltip
+      [arrow]="true"
+      [placementStrategy]="'default'"
+      [preferredPlacement]="'bottom-start'"
+      [scrollableContainer]="scrollableContainer()"
+    >
+      <button class="relative-element">Bottom Left</button>
+      <span class="message">Bottom Left Tooltip</span>
+    </app-basic-tooltip>
+  </div>
+  <div style="position: absolute; bottom: 10px; right: 10px">
+    <app-basic-tooltip
+      [arrow]="true"
+      [placementStrategy]="'default'"
+      [preferredPlacement]="'bottom-end'"
+      [scrollableContainer]="scrollableContainer()"
+    >
+      <button class="relative-element">Bottom Right</button>
+      <span class="message">Bottom Right Tooltip</span>
+    </app-basic-tooltip>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+.ngxTooltipDemo-html-example {
+  .ngxTooltip-inner-dialog-with-bridge {
+    padding: 3px !important;
+
+    .ngxTooltip-tooltip {
+      max-width: 220;
+      border: 1px solid #dadde9;
+
+      font-size: 16px;
+      color: rgba(0, 0, 0, 0.87);
+      background-color: #f5f5f9;
+    }
+
+    .ngxTooltip-arrow {
+      color: #dadde9;
+
+      svg {
+        filter: none;
+      }
+    }
+  }
+}

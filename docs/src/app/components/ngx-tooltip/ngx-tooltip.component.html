@@ -1,0 +1,105 @@
+<div style="display: inline-block">
+  <div
+    #relativeElementRef
+    class="ngxTooltip-relative-element"
+    [attr.popovertarget]="tooltipId"
+    (mouseenter)="
+      triggerActions().includes('hover') ? handleOpenAction() : undefined
+    "
+    (mouseleave)="
+      triggerActions().includes('hover')
+        ? handleRelativeElementMouseOrFocusLeave($event)
+        : undefined
+    "
+    (focus)="
+      triggerActions().includes('focus') ? handleOpenAction() : undefined
+    "
+    (blur)="
+      triggerActions().includes('focus')
+        ? handleRelativeElementMouseOrFocusLeave($event)
+        : undefined
+    "
+    [attr.tabIndex]="triggerActions().includes('focus') ? 0 : undefined"
+    (click)="
+      triggerActions().includes('click') ? handleOpenAction() : undefined
+    "
+  >
+    <ng-content select=".relative-element"></ng-content>
+  </div>
+
+  <div
+    class="ngxTooltip-dialog-with-bridge {{ tooltipRootClass() }}"
+    [ngClass]="[
+      dialogPositionStyle().currentPlacement
+        ? 'ngxTooltip-placement-' + dialogPositionStyle().currentPlacement
+        : '',
+      dialogAnimationState() === 'initial' ? 'ngxTooltip-initial' : '',
+      dialogAnimationState() === 'show' ? 'ngxTooltip-show' : '',
+      dialogAnimationState() === 'hide' ? 'ngxTooltip-hide' : ''
+    ]"
+    #dialogWithBridgeRef
+    popover="manual"
+    [attr.id]="tooltipId"
+    role="tooltip"
+    [attr.data-dialog-placement]="preferredPlacement()"
+    [ngStyle]="{
+      'visibility': dialogPositionStyle().value['visibility'] ?? '',
+      'bottom': dialogPositionStyle().value['bottom'] ?? '',
+      'top': dialogPositionStyle().value['top'] ?? '',
+      'left': dialogPositionStyle().value['left'] ?? '',
+      'right': dialogPositionStyle().value['right'] ?? '',
+      '--scrollbar-height': dialogPositionStyle().value['--scrollbar-height'] ?? '',
+      '--relative-x': dialogPositionStyle().value['--relative-x'] ?? '',
+      '--relative-y': dialogPositionStyle().value['--relative-y'] ?? '',
+      '--relative-width': dialogPositionStyle().value['--relative-width'] ?? '',
+      '--relative-height': dialogPositionStyle().value['--relative-height'] ?? '',
+      '--dialog-x': dialogPositionStyle().value['--dialog-x'] ?? '',
+      '--dialog-y': dialogPositionStyle().value['--dialog-y'] ?? '',
+      '--dialog-width': dialogPositionStyle().value['--dialog-width'] ?? '',
+      '--dialog-height': dialogPositionStyle().value['--dialog-height'] ?? '',
+      'max-width': dialogPositionStyle().maxWidth,
+      '--dialog-offset.px': (dialogOffset() - arrowSize()),
+      '--close-timeout.ms': leaveDelay(),
+      '--arrow-size.px': arrow() ? arrowSize() : 0,
+    }"
+    (mouseenter)="
+      triggerActions().includes('hover') ? handleMouseEnter() : undefined
+    "
+    (mouseleave)="
+      triggerActions().includes('hover')
+        ? handleMouseOrFocusLeaveDialog($event)
+        : undefined
+    "
+  >
+    <div
+      class="ngxTooltip-inner-dialog-with-bridge"
+      #dialogRef
+      [attr.tabIndex]="triggerActions().includes('focus') ? 0 : undefined"
+      (focusout)="
+        triggerActions().includes('focus')
+          ? handleMouseOrFocusLeaveDialog($event)
+          : undefined
+      "
+    >
+      <div class="ngxTooltip-animated-inner-dialog-with-bridge">
+        <div
+          class="ngxTooltip-tooltip tooltipClass"
+          [ngStyle]="{
+            'max-height':
+              dialogPositionStyle().maxHeight !== ''
+                ? dialogPositionStyle().maxHeight
+                : dialogMinMaxSizes()?.dialogMaxHeight !== undefined
+                ? dialogMinMaxSizes()?.dialogMaxHeight + 'px'
+                : ''
+          }"
+        >
+          <ng-content select=".message"></ng-content>
+        </div>
+
+        @if (arrow()) {
+        <app-ngx-tooltip-arrow [arrowSize]="arrowSize()" />
+        }
+      </div>
+    </div>
+  </div>
+</div>

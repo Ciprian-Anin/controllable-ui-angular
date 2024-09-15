@@ -1,0 +1,18 @@
+<div class="offset-input-container">
+  <label for="offset-input">Offset: </label>
+  <input
+    id="offset-input"
+    type="number"
+    min="0"
+    step="1"
+    [(ngModel)]="offset"
+  />
+</div>
+
+<app-basic-tooltip
+  [scrollableContainer]="scrollableContainer()"
+  [dialogOffset]="offset"
+>
+  <button class="relative-element">OFFSET</button>
+  <span class="message"> Add </span>
+</app-basic-tooltip>

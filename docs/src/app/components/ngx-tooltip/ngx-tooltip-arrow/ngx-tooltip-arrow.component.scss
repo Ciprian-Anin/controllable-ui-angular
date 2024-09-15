@@ -1,0 +1,239 @@
+.ngxTooltip-placement-top-start {
+  .ngxTooltip-arrow {
+    margin-left: min(
+      max(calc(var(--relative-x) - var(--dialog-x) + 0.5rem), 1rem),
+      var(--dialog-width) - 1rem
+    );
+    transform: rotateZ(-180deg);
+  }
+}
+.ngxTooltip-placement-top {
+  .ngxTooltip-arrow {
+    margin-left: min(
+      max(
+        calc(
+          (var(--relative-x) + (var(--relative-width) / 2)) -
+            (var(--dialog-x) + (var(--dialog-width) / 2)) +
+            (var(--dialog-width) / 2)
+        ),
+        1rem
+      ),
+      var(--dialog-width) - 1rem
+    );
+    transform: rotateZ(-180deg) translateX(50%);
+  }
+}
+.ngxTooltip-placement-top-end {
+  .ngxTooltip-arrow {
+    margin-left: min(
+      max(
+        calc(
+          (var(--relative-x) + var(--relative-width)) - (var(--dialog-x)) -
+            0.5rem
+        ),
+        1rem
+      ),
+      var(--dialog-width) - 1rem
+    );
+    transform: rotateZ(-180deg) translateX(100%);
+  }
+}
+
+.ngxTooltip-placement-top-start,
+.ngxTooltip-placement-top,
+.ngxTooltip-placement-top-end {
+  .ngxTooltip-animated-inner-dialog-with-bridge {
+    .ngxTooltip-arrow {
+      bottom: 0;
+      margin-bottom: var(--dialog-offset);
+    }
+  }
+}
+
+.ngxTooltip-placement-bottom-start {
+  .ngxTooltip-arrow {
+    margin-left: min(
+      max(calc(var(--relative-x) - var(--dialog-x) + 0.5rem), 0.5rem),
+      var(--dialog-width) - 0.5rem
+    );
+  }
+}
+.ngxTooltip-placement-bottom {
+  .ngxTooltip-arrow {
+    margin-left: min(
+      max(
+        calc(
+          (var(--relative-x) + (var(--relative-width) / 2)) -
+            (var(--dialog-x) + (var(--dialog-width) / 2)) +
+            (var(--dialog-width) / 2)
+        ),
+        1rem
+      ),
+      var(--dialog-width) - 1rem
+    );
+    transform: translateX(-50%);
+  }
+}
+.ngxTooltip-placement-bottom-end {
+  .ngxTooltip-arrow {
+    margin-left: min(
+      max(
+        calc(
+          (var(--relative-x) + var(--relative-width)) - (var(--dialog-x)) -
+            0.5rem
+        ),
+        0.5rem
+      ),
+      var(--dialog-width) - 0.5rem
+    );
+    transform: translateX(-100%);
+  }
+}
+
+.ngxTooltip-placement-bottom-start,
+.ngxTooltip-placement-bottom,
+.ngxTooltip-placement-bottom-end {
+  .ngxTooltip-animated-inner-dialog-with-bridge {
+    .ngxTooltip-arrow {
+      top: 0;
+      margin-top: var(--dialog-offset);
+    }
+  }
+}
+
+.ngxTooltip-placement-left-start {
+  .ngxTooltip-arrow {
+    margin-bottom: min(
+      max(
+        calc(var(--dialog-height) - (var(--relative-y) - var(--dialog-y))),
+        var(--arrow-size) + 3px
+      ),
+      var(--dialog-height) - 3px
+    );
+    transform: rotateZ(90deg) translateX(100%);
+  }
+}
+.ngxTooltip-placement-left {
+  .ngxTooltip-arrow {
+    margin-bottom: min(
+      max(
+        calc(
+          var(--dialog-height) -
+            calc(
+              (var(--relative-y) + (var(--relative-height) / 2)) -
+                (var(--dialog-y) + (var(--dialog-height) / 2)) +
+                (var(--dialog-height) / 2)
+            )
+        ),
+        var(--arrow-size) - 3px
+      ),
+      var(--dialog-height) - var(--arrow-size) + 3px
+    );
+    transform: rotateZ(90deg) translateX(50%);
+  }
+}
+.ngxTooltip-placement-left-end {
+  .ngxTooltip-arrow {
+    margin-bottom: min(
+      max(
+        calc(
+          (var(--dialog-y) + var(--dialog-height)) -
+            (var(--relative-y) + var(--relative-height)) + 3px
+        ),
+        3px
+      ),
+      var(--dialog-height) - var(--arrow-size) - 3px
+    );
+    transform: rotateZ(90deg);
+    transform-origin: center;
+  }
+}
+
+.ngxTooltip-placement-left-start,
+.ngxTooltip-placement-left,
+.ngxTooltip-placement-left-end {
+  .ngxTooltip-animated-inner-dialog-with-bridge {
+    .ngxTooltip-arrow {
+      right: 0;
+      margin-right: var(--dialog-offset);
+    }
+  }
+}
+
+.ngxTooltip-placement-right-start {
+  .ngxTooltip-arrow {
+    margin-bottom: min(
+      max(
+        calc(var(--dialog-height) - (var(--relative-y) - var(--dialog-y))),
+        var(--arrow-size) + 3px
+      ),
+      var(--dialog-height) - 3px
+    );
+    transform: rotateZ(-90deg) translateX(-100%);
+  }
+}
+.ngxTooltip-placement-right {
+  .ngxTooltip-arrow {
+    margin-bottom: min(
+      max(
+        calc(
+          var(--dialog-height) -
+            calc(
+              (var(--relative-y) + (var(--relative-height) / 2)) -
+                (var(--dialog-y) + (var(--dialog-height) / 2)) +
+                (var(--dialog-height) / 2)
+            )
+        ),
+        var(--arrow-size) - 3px
+      ),
+      var(--dialog-height) - var(--arrow-size) + 3px
+    );
+    transform: rotateZ(-90deg) translateX(-50%);
+  }
+}
+.ngxTooltip-placement-right-end {
+  .ngxTooltip-arrow {
+    margin-bottom: min(
+      max(
+        calc(
+          (var(--dialog-y) + var(--dialog-height)) -
+            (var(--relative-y) + var(--relative-height)) + 3px
+        ),
+        3px
+      ),
+      var(--dialog-height) - var(--arrow-size) - 3px
+    );
+    transform: rotateZ(-90deg);
+    transform-origin: center;
+  }
+}
+
+.ngxTooltip-placement-right-start,
+.ngxTooltip-placement-right,
+.ngxTooltip-placement-right-end {
+  .ngxTooltip-animated-inner-dialog-with-bridge {
+    .ngxTooltip-arrow {
+      left: 0;
+      margin-left: var(--dialog-offset);
+    }
+  }
+}
+
+.ngxTooltip-arrow {
+  padding: 0;
+  margin: 0;
+  margin-top: 0px;
+  color: rgba(97, 97, 97, 0.92);
+  width: 1rem;
+  height: 1rem;
+  line-height: 0;
+  position: absolute;
+  bottom: 0;
+  transform-origin: center;
+
+  svg {
+    fill: currentColor;
+    filter: drop-shadow(0 -3px 3px rgba(0, 0, 0, 0.16));
+    height: auto;
+  }
+}

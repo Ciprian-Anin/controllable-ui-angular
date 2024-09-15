@@ -1,0 +1,46 @@
+:host {
+  width: 100%;
+  height: fit-content;
+}
+
+.Root-demo-tooltip {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+
+  button {
+    height: 100px;
+    width: 100px;
+  }
+
+  .top-section {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    grid-column: 2 / span 3;
+  }
+
+  .bottom-section {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    grid-column: 2 / span 3;
+    grid-row: 5;
+  }
+
+  .left-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    grid-row: 2 / span 3;
+  }
+
+  .right-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    grid-column: -2;
+    grid-row: 2 / span 3;
+  }
+}

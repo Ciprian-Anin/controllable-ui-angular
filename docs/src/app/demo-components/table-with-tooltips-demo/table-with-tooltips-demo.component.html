@@ -1,0 +1,18 @@
+<div style="overflow: auto; width: 50dvw; height: 50dvh" #scrollableContainer>
+  <table style="width: 100%; border-collapse: collapse">
+    <tbody>
+      @for (row of rows; let rowIndex = $index; track $index) {
+      <tr>
+        @for (col of cols; let colIndex = $index; track $index) {
+        <td style="border: 1px solid #ccc; position: relative">
+          <app-cell-tooltip
+            [scrollableContainer]="scrollableContainerElement()!"
+            [cellValue]="'Cell ' + (rowIndex * 10 + colIndex + 1)"
+          />
+        </td>
+        }
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,138 @@
+<div class="Root-demo-tooltip">
+  <div class="top-section">
+    <app-basic-tooltip
+      [arrow]="true"
+      [scrollableContainer]="scrollableContainer()"
+      [preferredPlacement]="'top-start'"
+      [placementStrategy]="'default'"
+    >
+      <button class="relative-element" [tabIndex]="-1">top-start</button>
+      <div class="message">Top start {{ loremIpsumLongText() }}</div>
+    </app-basic-tooltip>
+    <app-basic-tooltip
+      [arrow]="true"
+      [scrollableContainer]="scrollableContainer()"
+      [preferredPlacement]="'top'"
+      [placementStrategy]="'default'"
+    >
+      <button class="relative-element">top</button>
+      <div class="message">Top {{ loremIpsumLongText() }}</div>
+    </app-basic-tooltip>
+    <app-basic-tooltip
+      [arrow]="true"
+      [scrollableContainer]="scrollableContainer()"
+      [preferredPlacement]="'top-end'"
+      [placementStrategy]="'default'"
+    >
+      <button class="relative-element">top-end</button>
+      <div class="message">Top end {{ loremIpsumLongText() }}</div>
+    </app-basic-tooltip>
+  </div>
+
+  <div class="left-section">
+    <app-basic-tooltip
+      [arrow]="true"
+      [scrollableContainer]="scrollableContainer()"
+      [preferredPlacement]="'left-start'"
+      [placementStrategy]="'default'"
+    >
+      <button class="relative-element">left-start</button>
+      <div class="message" style="max-width: 200px">
+        Left start {{ loremIpsumLongText() }}
+      </div>
+    </app-basic-tooltip>
+    <app-basic-tooltip
+      [arrow]="true"
+      [scrollableContainer]="scrollableContainer()"
+      [preferredPlacement]="'left'"
+      [placementStrategy]="'default'"
+    >
+      <button class="relative-element">left</button>
+      <div class="message" style="max-width: 200px">
+        Left {{ loremIpsumLongText() }}
+      </div>
+    </app-basic-tooltip>
+    <app-basic-tooltip
+      [arrow]="true"
+      [scrollableContainer]="scrollableContainer()"
+      [preferredPlacement]="'left-end'"
+      [placementStrategy]="'default'"
+    >
+      <button class="relative-element">left-end</button>
+      <div class="message" style="max-width: 200px">
+        Left end {{ loremIpsumLongText() }}
+      </div>
+    </app-basic-tooltip>
+  </div>
+
+  <div class="right-section">
+    <app-basic-tooltip
+      [arrow]="true"
+      [scrollableContainer]="scrollableContainer()"
+      [preferredPlacement]="'right-start'"
+      [placementStrategy]="'default'"
+    >
+      <button class="relative-element">right-start</button>
+      <div class="message" style="max-width: 200px">
+        Right start {{ loremIpsumLongText() }}
+      </div>
+    </app-basic-tooltip>
+    <app-basic-tooltip
+      [arrow]="true"
+      [scrollableContainer]="scrollableContainer()"
+      [preferredPlacement]="'right'"
+      [placementStrategy]="'default'"
+    >
+      <button class="relative-element">right</button>
+      <div class="message" style="max-width: 200px">
+        Right {{ loremIpsumLongText() }}
+      </div>
+    </app-basic-tooltip>
+    <app-basic-tooltip
+      [arrow]="true"
+      [scrollableContainer]="scrollableContainer()"
+      [preferredPlacement]="'right-end'"
+      [placementStrategy]="'default'"
+    >
+      <button class="relative-element">right-end</button>
+      <div class="message" style="max-width: 200px">
+        Right end {{ loremIpsumLongText() }}
+      </div>
+    </app-basic-tooltip>
+  </div>
+
+  <div class="bottom-section">
+    <app-basic-tooltip
+      [arrow]="true"
+      [scrollableContainer]="scrollableContainer()"
+      [placementStrategy]="'default'"
+      [preferredPlacement]="'bottom-start'"
+    >
+      <button class="relative-element">bottom-start</button>
+      <div class="message">Bottom start {{ loremIpsumLongText() }}</div>
+    </app-basic-tooltip>
+
+    <app-basic-tooltip
+      [arrow]="true"
+      [scrollableContainer]="scrollableContainer()"
+      [placementStrategy]="'considerKeepingCurrentPlacement'"
+      [preferredPlacement]="'bottom'"
+      [dialogMinMaxSizes]="{
+        dialogMinHeight: 50,
+      }"
+    >
+      <!-- // dialogMaxHeight: 100, -->
+      <button class="relative-element">bottom</button>
+      <div class="message">Bottom {{ loremIpsumLongText() }}</div>
+    </app-basic-tooltip>
+    <app-basic-tooltip
+      [arrow]="true"
+      [scrollableContainer]="scrollableContainer()"
+      [preferredPlacement]="'bottom-end'"
+      [placementStrategy]="'default'"
+    >
+      <button class="relative-element">bottom-end</button>
+      <div class="message">Bottom end {{ loremIpsumLongText() }}</div>
+    </app-basic-tooltip>
+  </div>
+</div>

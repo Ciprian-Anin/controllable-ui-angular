@@ -1,0 +1,98 @@
+.ngxTooltip-dialog-with-bridge,
+.ngxTooltip-inner-dialog-with-bridge {
+  border: unset;
+  padding: unset;
+  background: transparent;
+  overflow: hidden;
+}
+
+.ngxTooltip-show .ngxTooltip-animated-inner-dialog-with-bridge {
+  animation: ngxTooltip-show 150ms cubic-bezier(0, 0, 0.2, 1) forwards;
+}
+
+.ngxTooltip-hide .ngxTooltip-animated-inner-dialog-with-bridge {
+  animation: ngxTooltip-hide 150ms cubic-bezier(0, 0, 0.2, 1) forwards;
+  animation-delay: calc(var(--close-timeout) - 150ms);
+}
+
+.ngxTooltip-tooltip {
+  display: flex;
+  width: fit-content;
+  max-width: 600px;
+  max-height: calc(100vh - 1px - var(--scrollbar-height));
+  height: 100%;
+  padding: 4px 8px;
+  border: unset;
+  border-radius: 4px;
+  margin: 0;
+
+  overflow-wrap: break-word;
+  font-size: 12px;
+  color: white;
+  background-color: rgba(97, 97, 97, 0.92);
+  transform-origin: center top;
+}
+
+.ngxTooltip-tooltip:first-child {
+  overflow: auto;
+}
+
+.ngxTooltip-placement-top-start,
+.ngxTooltip-placement-top,
+.ngxTooltip-placement-top-end {
+  .ngxTooltip-animated-inner-dialog-with-bridge {
+    padding-bottom: calc(var(--dialog-offset) + var(--arrow-size));
+  }
+}
+
+.ngxTooltip-placement-bottom-start,
+.ngxTooltip-placement-bottom,
+.ngxTooltip-placement-bottom-end {
+  .ngxTooltip-animated-inner-dialog-with-bridge {
+    padding-top: calc(var(--dialog-offset) + var(--arrow-size));
+  }
+}
+
+.ngxTooltip-placement-left-start,
+.ngxTooltip-placement-left,
+.ngxTooltip-placement-left-end {
+  .ngxTooltip-animated-inner-dialog-with-bridge {
+    padding-right: calc(var(--dialog-offset) + var(--arrow-size));
+  }
+}
+
+.ngxTooltip-placement-right-start,
+.ngxTooltip-placement-right,
+.ngxTooltip-placement-right-end {
+  .ngxTooltip-animated-inner-dialog-with-bridge {
+    padding-left: calc(var(--dialog-offset) + var(--arrow-size));
+  }
+}
+
+.ngxTooltip-relative-element {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes ngxTooltip-show {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes ngxTooltip-hide {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
