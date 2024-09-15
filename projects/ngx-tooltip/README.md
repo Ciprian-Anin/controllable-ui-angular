@@ -19,6 +19,10 @@
 
 ## Installation
 
+```bash
+npm install @controllable-ui-angular/ngx-tooltip
+```
+
 Include the `NgxTooltipComponent` component in your project by adding it in the imports array.
 
 ```ts
