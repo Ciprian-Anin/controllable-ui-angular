@@ -1,5 +1,8 @@
 import { Placement } from '../types';
-import { getDocumentHeight, getDocumentWidth } from '../../tooltip/utils';
+import {
+  getDocumentHeight,
+  getDocumentWidth,
+} from './utils';
 
 // @ts-ignore
 /**

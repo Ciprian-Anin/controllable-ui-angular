@@ -1,5 +1,8 @@
-import { Placement } from '../../tooltip/utils/types';
-import { getDocumentHeight, getDocumentWidth } from './utils';
+import { Placement } from '../types';
+import {
+  getDocumentHeight,
+  getDocumentWidth,
+} from './utils';
 
 export function getBottomEndPositionStyle({
   relativeElement,
