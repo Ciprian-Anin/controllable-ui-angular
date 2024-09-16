@@ -120,7 +120,7 @@ export type DefaultStrategyProps = BaseProps & {
 export type Props = DefaultStrategyProps | KeepCurrentPlacementStrategyProps;
 
 @Component({
-  selector: 'app-ngx-tooltip',
+  selector: 'ngx-tooltip',
   standalone: true,
   imports: [
     CommonModule,

@@ -11,7 +11,7 @@
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
     "paths": {
-      "ngx-tooltip": [
+      "@controllable-ui/ngx-tooltip": [
         "./dist/ngx-tooltip"
       ]
     },
@@ -26,6 +26,9 @@
     "lib": [
       "ES2022",
       "dom"
+    ],
+    "types": [
+      "node"
     ]
   },
   "angularCompilerOptions": {

@@ -1,6 +1,7 @@
 {
   "name": "@controllable-ui/ngx-tooltip",
   "version": "0.0.1",
+  "main": "./src/lib/index.ts",
   "peerDependencies": {
     "@angular/common": "^18.2.0",
     "@angular/core": "^18.2.0"

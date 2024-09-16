@@ -1,0 +1,22 @@
+<ngx-tooltip
+  [arrow]="arrow()"
+  [triggerActions]="triggerActions()"
+  [tooltipRootClass]="tooltipRootClass()"
+  [scrollableContainer]="scrollableContainer()"
+  [open]="dialogIsOpen()"
+  [enterDelay]="enterDelay()"
+  [leaveDelay]="leaveDelay()"
+  [preferredPlacement]="preferredPlacement()"
+  [placementStrategy]="placementStrategy()"
+  [dialogMinMaxSizes]="dialogMinMaxSizes()"
+  [dialogOffset]="dialogOffset()"
+  (onOpen$)="handleOpen$()"
+  (onClose$)="handleClose$()"
+>
+  <span class="relative-element">
+    <ng-content select=".relative-element" />
+  </span>
+  <span class="message">
+    <ng-content select=".message" />
+  </span>
+</ngx-tooltip>

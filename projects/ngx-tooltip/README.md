@@ -26,7 +26,16 @@ npm install @controllable-ui-angular/ngx-tooltip
 Include the `NgxTooltipComponent` component in your project by adding it in the imports array.
 
 ```ts
-import { Tooltip } from "./Tooltip";
+import { NgxTooltipComponent } from " @controllable-ui-angular/ngx-tooltip";
+
+@Component({
+  // ...
+  imports: [
+    NgxTooltipComponent
+  ],
+  // ...
+})
+// ...
 ```
 
 Ensure you have the necessary dependencies and the environment set up for compiling and running the component.
@@ -36,27 +45,44 @@ Ensure you have the necessary dependencies and the environment set up for compil
 ### Create the Basic Tooltip Component with desired behavior
 
 ```html
-<app-ngx-tooltip [arrow]="arrow()" [triggerActions]="triggerActions()" [tooltipRootClass]="tooltipRootClass()" [scrollableContainer]="scrollableContainer()" [open]="dialogIsOpen()" [enterDelay]="enterDelay()" [leaveDelay]="leaveDelay()" [preferredPlacement]="preferredPlacement()" [placementStrategy]="placementStrategy()" [dialogMinMaxSizes]="dialogMinMaxSizes()" [dialogOffset]="dialogOffset()" (onOpen$)="handleOpen$()" (onClose$)="handleClose$()">
+<ngx-tooltip 
+  [arrow]="arrow()" 
+  [triggerActions]="triggerActions()" 
+  [tooltipRootClass]="tooltipRootClass()" 
+  [scrollableContainer]="scrollableContainer()" 
+  [open]="dialogIsOpen()" 
+  [enterDelay]="enterDelay()" 
+  [leaveDelay]="leaveDelay()" 
+  [preferredPlacement]="preferredPlacement()" 
+  [placementStrategy]="placementStrategy()" 
+  [dialogMinMaxSizes]="dialogMinMaxSizes()" 
+  [dialogOffset]="dialogOffset()" 
+  (onOpen$)="handleOpen$()" 
+  (onClose$)="handleClose$()"
+>
   <span class="relative-element">
     <ng-content select=".relative-element" />
   </span>
   <span class="message">
     <ng-content select=".message" />
   </span>
-</app-ngx-tooltip>
+</ngx-tooltip>
 ```
 
 ```ts
 import { CommonModule } from "@angular/common";
 import { ChangeDetectionStrategy, Component, ElementRef, input, signal, ViewEncapsulation } from "@angular/core";
 
-import { NgxTooltipComponent } from "@controllable-ui/ngx-tooltip.component";
+import { NgxTooltipComponent } from "@controllable-ui/ngx-tooltip";
 import { Placement } from "../../components/tooltip/types";
 
 @Component({
   selector: "app-basic-tooltip",
   standalone: true,
-  imports: [CommonModule, TooltipComponent],
+  imports: [
+    CommonModule, 
+    NgxTooltipComponent
+  ],
   templateUrl: "./basic-tooltip.component.html",
   styleUrl: "./basic-tooltip.component.scss",
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -64,7 +90,7 @@ import { Placement } from "../../components/tooltip/types";
 })
 export class BasicTooltipComponent {
   arrow = input<boolean>(false);
-  triggerActions = input<("hover" | "focus" | "click")[]>(["click"]);
+  triggerActions = input<("hover" | "focus" | "click")[]>(["hover", "focus"]);
   tooltipRootClass = input<string>();
   preferredPlacement = input<Placement>("bottom");
   placementStrategy = input<"default" | "considerKeepingCurrentPlacement">("default");
@@ -106,7 +132,12 @@ export class BasicTooltipComponent {
 @Component({
   selector: "app-root",
   standalone: true,
-  imports: [RouterOutlet, CommonModule, BasicTooltipComponent],
+  imports: [
+    RouterOutlet, 
+    CommonModule,
+
+    BasicTooltipComponent
+  ],
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.scss",
 })

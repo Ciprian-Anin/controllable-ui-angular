@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'app-ngx-tooltip-arrow',
+  selector: 'ngx-tooltip-arrow',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './ngx-tooltip-arrow.component.html',

@@ -3,15 +3,13 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../out-tsc/lib",
-    "declaration": true,
-    "declarationMap": true,
-    "inlineSources": true,
-    "types": [
-      "node"
-    ]
+    "outDir": "../../out-tsc/app",
+    "types": ["node"]
   },
-  "exclude": [
-    "**/*.spec.ts"
+  "files": [
+    "src/main.ts"
+  ],
+  "include": [
+    "src/**/*.d.ts"
   ]
 }
