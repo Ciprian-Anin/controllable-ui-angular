@@ -1,5 +1,7 @@
 # Controllable UI - Angular Library ⚡️
 
+> ✨ Check out the demo [here](https://ciprian-anin.github.io/controllable-ui-angular/).
+
 # Tooltip
 
 **Customizable tooltip** component with **advanced placement strategies** for positioning. It ensures the tooltip is **positioned optimally within available screen space**, **automatically adjusting** based on user-defined preferences and space constraints.
@@ -20,13 +22,13 @@
 ## Installation
 
 ```bash
-npm install @controllable-ui-angular/ngx-tooltip
+npm install @controllable-ui/ngx-tooltip
 ```
 
 Include the `NgxTooltipComponent` component in your project by adding it in the imports array.
 
 ```ts
-import { NgxTooltipComponent } from " @controllable-ui-angular/ngx-tooltip";
+import { NgxTooltipComponent } from "@controllable-ui/ngx-tooltip";
 
 @Component({
   // ...
