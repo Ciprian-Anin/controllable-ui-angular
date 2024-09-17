@@ -122,10 +122,7 @@ export type Props = DefaultStrategyProps | KeepCurrentPlacementStrategyProps;
 @Component({
   selector: 'ngx-tooltip',
   standalone: true,
-  imports: [
-    CommonModule,
-    NgxTooltipArrowComponent
-  ],
+  imports: [CommonModule, NgxTooltipArrowComponent],
   templateUrl: './ngx-tooltip.component.html',
   styleUrl: './ngx-tooltip.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -148,6 +145,12 @@ export class NgxTooltipComponent implements OnChanges {
   triggerActions = input<('hover' | 'focus' | 'click')[]>(['hover', 'focus']);
   arrow = input<boolean>(false);
   dialogOffset = input<number>(5);
+
+  computedDialogOffset = computed(() =>
+    this.arrow()
+      ? this.dialogOffset() - this.arrowSize() / 2
+      : this.dialogOffset()
+  );
   scrollableContainer = input<ElementRef>();
   tooltipRootClass = input<string>();
   tooltipClass = input<string>();
@@ -284,7 +287,7 @@ export class NgxTooltipComponent implements OnChanges {
           : getAvailablePlacementFromTheOnesToBeTried(
               this.orderOfPlacementsToBeTriedComputed(),
               this.dialogRef()!.nativeElement,
-              this.relativeElementRef()!.nativeElement,
+              this.relativeElementRef()!.nativeElement
             );
 
       if (availablePosition.type === 'partial-size-available') {
@@ -305,7 +308,7 @@ export class NgxTooltipComponent implements OnChanges {
             this.dialogPositionStyle.set({
               ...this.dialogPositionStyle(),
               maxHeight: `${
-                availablePosition.availableSize - this.dialogOffset()
+                availablePosition.availableSize - this.computedDialogOffset()
               }px`,
             });
             break;

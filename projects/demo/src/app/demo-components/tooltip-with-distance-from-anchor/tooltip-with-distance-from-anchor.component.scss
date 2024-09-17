@@ -1,8 +1,27 @@
-.offset-input-container {
-  width: fit-content;
-  margin-bottom: 1rem;
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
 
-  input {
-    max-width: 3rem;
+.configs-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+
+  .offset-input-container {
+    width: fit-content;
+
+    input {
+      max-width: 3rem;
+    }
   }
+}
+
+.tooltips-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }

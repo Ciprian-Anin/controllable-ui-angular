@@ -1,4 +1,4 @@
-<div style="display: inline-block">
+<div style="display: inline-block; width: 100%;">
   <div
     #relativeElementRef
     class="ngxTooltip-relative-element"
@@ -58,7 +58,7 @@
       '--dialog-width': dialogPositionStyle().value['--dialog-width'] ?? '',
       '--dialog-height': dialogPositionStyle().value['--dialog-height'] ?? '',
       'max-width': dialogPositionStyle().maxWidth,
-      '--dialog-offset.px': (dialogOffset()),
+      '--dialog-offset.px': (computedDialogOffset()),
       '--close-timeout.ms': leaveDelay(),
       '--arrow-size.px': arrow() ? arrowSize() : 0,
     }"

@@ -1,59 +1,25 @@
 import { CommonModule } from '@angular/common';
-import {
-  Component,
-  ElementRef,
-  viewChild,
-} from '@angular/core';
+import { Component, ElementRef, viewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
-import {
-  BasicTooltipComponent,
-} from './demo-components/basic-tooltip/basic-tooltip.component';
-import {
-  BootstrapTooltipCustomizedComponent,
-} from './demo-components/bootstrap-tooltip-customized/bootstrap-tooltip-customized.component';
-import {
-  FadeTransitionTooltipComponent,
-} from './demo-components/fade-transition-tooltip/fade-transition-tooltip.component';
-import {
-  GridWithTooltipsDemoComponent,
-} from './demo-components/grid-with-tooltips-demo/grid-with-tooltips-demo.component';
-import {
-  HtmlContentTooltipCustomizedComponent,
-} from './demo-components/html-content-tooltip-customized/html-content-tooltip-customized.component';
-import {
-  LightTooltipCustomizedComponent,
-} from './demo-components/light-tooltip-customized/light-tooltip-customized.component';
-import {
-  NoWrappingWidthTooltipComponent,
-} from './demo-components/no-wrapping-width-tooltip/no-wrapping-width-tooltip.component';
-import {
-  PositionedTooltipWithLongContentComponent,
-} from './demo-components/positioned-tooltip-with-long-content/positioned-tooltip-with-long-content.component';
-import {
-  PositionedTooltipsComponent,
-} from './demo-components/positioned-tooltips/positioned-tooltips.component';
-import {
-  CellTooltipComponent,
-} from './demo-components/table-with-tooltips-demo/cell-tooltip/cell-tooltip.component';
-import {
-  TableWithTooltipsDemoComponent,
-} from './demo-components/table-with-tooltips-demo/table-with-tooltips-demo.component';
-import {
-  TooltipCornersSquareDemoComponent,
-} from './demo-components/tooltip-corners-square-demo/tooltip-corners-square-demo.component';
-import {
-  TooltipWithArrowComponent,
-} from './demo-components/tooltip-with-arrow/tooltip-with-arrow.component';
-import {
-  TooltipWithCloseActionDemoComponent,
-} from './demo-components/tooltip-with-close-action-demo/tooltip-with-close-action-demo.component';
-import {
-  TooltipWithDistanceFromAnchorComponent,
-} from './demo-components/tooltip-with-distance-from-anchor/tooltip-with-distance-from-anchor.component';
-import {
-  ZoomTransitionTooltipComponent,
-} from './demo-components/zoom-transition-tooltip/zoom-transition-tooltip.component';
+import { MarkdownModule } from 'ngx-markdown';
+
+import { BasicTooltipComponent } from './demo-components/basic-tooltip/basic-tooltip.component';
+import { CustomizationDemoComponent } from './demo-components/customization-demo/customization-demo.component';
+import { DisabledElementsDemoComponent } from './demo-components/disabled-elements-demo/disabled-elements-demo.component';
+import { GridWithTooltipsDemoComponent } from './demo-components/grid-with-tooltips-demo/grid-with-tooltips-demo.component';
+import { InteractiveDemoComponent } from './demo-components/interactive-demo/interactive-demo.component';
+import { PositionedTooltipWithLongContentComponent } from './demo-components/positioned-tooltip-with-long-content/positioned-tooltip-with-long-content.component';
+import { PositionedTooltipsComponent } from './demo-components/positioned-tooltips/positioned-tooltips.component';
+import { ShowingAndHidingWithDelayDemoComponent } from './demo-components/showing-and-hiding-with-delay-demo/showing-and-hiding-with-delay-demo.component';
+import { CellTooltipComponent } from './demo-components/table-with-tooltips-demo/cell-tooltip/cell-tooltip.component';
+import { TableWithTooltipsDemoComponent } from './demo-components/table-with-tooltips-demo/table-with-tooltips-demo.component';
+import { TooltipCornersSquareDemoComponent } from './demo-components/tooltip-corners-square-demo/tooltip-corners-square-demo.component';
+import { TooltipWithArrowComponent } from './demo-components/tooltip-with-arrow/tooltip-with-arrow.component';
+import { TooltipWithDistanceFromAnchorComponent } from './demo-components/tooltip-with-distance-from-anchor/tooltip-with-distance-from-anchor.component';
+import { TransitionsDemoComponent } from './demo-components/transitions-demo/transitions-demo.component';
+import { TriggersDemoComponent } from './demo-components/triggers-demo/triggers-demo.component';
+import { VariableWidthDemoComponent } from './demo-components/variable-width-demo/variable-width-demo.component';
 import { DemoComponent } from './demo/demo.component';
 
 @Component({
@@ -64,24 +30,26 @@ import { DemoComponent } from './demo/demo.component';
     RouterOutlet,
     CommonModule,
 
+    MarkdownModule,
+
     // CUSTOM COMPONENTS
     CellTooltipComponent,
     TableWithTooltipsDemoComponent,
-    TooltipWithCloseActionDemoComponent,
-    HtmlContentTooltipCustomizedComponent,
     PositionedTooltipsComponent,
     TooltipCornersSquareDemoComponent,
     GridWithTooltipsDemoComponent,
     BasicTooltipComponent,
     DemoComponent,
-    LightTooltipCustomizedComponent,
-    BootstrapTooltipCustomizedComponent,
     TooltipWithArrowComponent,
     TooltipWithDistanceFromAnchorComponent,
-    NoWrappingWidthTooltipComponent,
-    FadeTransitionTooltipComponent,
-    ZoomTransitionTooltipComponent,
     PositionedTooltipWithLongContentComponent,
+    CustomizationDemoComponent,
+    TriggersDemoComponent,
+    VariableWidthDemoComponent,
+    InteractiveDemoComponent,
+    DisabledElementsDemoComponent,
+    TransitionsDemoComponent,
+    ShowingAndHidingWithDelayDemoComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

@@ -1,0 +1,23 @@
+<app-basic-tooltip
+  [scrollableContainer]="scrollableContainerElement()"
+  [triggerActions]="['hover']"
+>
+  <button class="relative-element">HOVER</button>
+  <span class="message"> Add </span>
+</app-basic-tooltip>
+
+<app-basic-tooltip
+  [scrollableContainer]="scrollableContainerElement()"
+  [triggerActions]="['focus']"
+>
+  <button class="relative-element">FOCUS</button>
+  <span class="message"> Add </span>
+</app-basic-tooltip>
+
+<app-basic-tooltip
+  [scrollableContainer]="scrollableContainerElement()"
+  [triggerActions]="['click']"
+>
+  <button class="relative-element">CLICK</button>
+  <span class="message"> Add </span>
+</app-basic-tooltip>

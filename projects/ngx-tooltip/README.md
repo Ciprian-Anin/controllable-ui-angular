@@ -124,7 +124,10 @@ export class BasicTooltipComponent {
 ### How to use the created `BasicTooltipComponent` 🎉
 
 ```html
-<app-basic-tooltip [scrollableContainer]="scrollableContainerElement()">
+<app-basic-tooltip 
+ [scrollableContainer]="scrollableContainerElement()" 
+ [tooltipRootClass]="'my-amazing-tooltip'"
+>
   <button class="relative-element">Default - interactive</button>
   <span class="message"> Hover this tooltip and select its content </span>
 </app-basic-tooltip>

@@ -65,3 +65,9 @@ button {
     width: 100px;
   }
 }
+
+// MARKDOWN STYLE
+code[class*="language-"],
+pre[class*="language-"] {
+  font-size: 0.88em !important;
+}

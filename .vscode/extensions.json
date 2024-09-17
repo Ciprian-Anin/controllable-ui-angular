@@ -1,4 +1,48 @@
 {
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=827846
-  "recommendations": ["angular.ng-template"]
+  "recommendations": [
+    // ANGULAR
+    /*
+   ** This extension provides a rich editing experience for Angular templates,
+   ** both inline and external templates including.
+   */
+    "angular.ng-template",
+    /*
+   ** Create components, services, etc by using the contextmenu options.
+   ** Right click on the mouse where you need to add them.
+   */
+    "cyrilletuzi.angular-schematics",
+    // FORMATTING CODE AND VERIFY IT
+    /*
+   ** ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code,
+   ** with the goal of making code more consistent and avoiding bugs.
+   */
+    "dbaeumer.vscode-eslint",
+    // enforces a consistent style
+    "esbenp.prettier-vscode",
+    // Make TypeScript errors prettier and human-readable in VSCode.
+    "yoavbls.pretty-ts-errors",
+    /*
+   ** Designed to improve focus, productivity, and collaboration
+   ** with a powerful set of tools to help you and your team
+   ** better understand, write, and review code.
+   */
+    "eamodio.gitlens",
+    // OPTIONAL
+    "streetsidesoftware.code-spell-checker", // catch common spelling errors
+    /*
+   ** Rename Angular components, directives, and services
+   ** including their filenames, class names and selectors all in one go.
+   */
+    "tomwhite007.rename-angular-component",
+    // human-friendly comments in your code
+    "aaron-bond.better-comments",
+    /*
+   ** Makes debugging much easier by automating
+   ** the operation of writing meaningful log message.
+   */
+    "chakrounanas.turbo-console-log",
+    // for testing
+    "lucono.karma-test-explorer"
+  ]
 }

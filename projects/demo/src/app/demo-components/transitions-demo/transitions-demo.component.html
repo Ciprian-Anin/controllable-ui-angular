@@ -1,0 +1,12 @@
+<app-basic-tooltip [scrollableContainer]="scrollableContainerElement()">
+  <button class="relative-element">GROW (default)</button>
+  <span class="message"> Add </span>
+</app-basic-tooltip>
+
+<app-fade-transition-tooltip
+  [scrollableContainer]="scrollableContainerElement()"
+/>
+
+<app-zoom-transition-tooltip
+  [scrollableContainer]="scrollableContainerElement()"
+/>

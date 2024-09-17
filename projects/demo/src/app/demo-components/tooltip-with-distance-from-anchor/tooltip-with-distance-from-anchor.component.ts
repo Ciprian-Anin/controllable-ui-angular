@@ -4,10 +4,13 @@ import {
   Component,
   ElementRef,
   input,
+  signal,
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-import { BasicTooltipComponent } from '../basic-tooltip/basic-tooltip.component';
+import {
+  BasicTooltipComponent,
+} from '../basic-tooltip/basic-tooltip.component';
 
 @Component({
   selector: 'app-tooltip-with-distance-from-anchor',
@@ -20,5 +23,6 @@ import { BasicTooltipComponent } from '../basic-tooltip/basic-tooltip.component'
 export class TooltipWithDistanceFromAnchorComponent {
   scrollableContainer = input<ElementRef>();
 
-  offset = 0;
+  offset = signal<number>(0);
+  withArrow = signal<boolean>(false);
 }

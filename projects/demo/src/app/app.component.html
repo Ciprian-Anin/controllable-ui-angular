@@ -1,12 +1,3 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
 <div #scrollableContainer class="main-wrapper">
   <main class="main">
     <div class="content">
@@ -113,28 +104,44 @@
 
         <li>
           Add in the template the <code>ngx-tooltip</code> component:
-          <pre>{{ tooltipHtmlCode }}</pre>
+          <markdown
+            lineNumbers
+            [data]="tooltipHtmlCode | language : 'html'"
+          ></markdown>
         </li>
 
         <li>
-          Import <code>TooltipComponent</code> in the <code>imports</code> array
+          Import <code>NgxTooltipComponent</code> in the
+          <code>imports</code> array
         </li>
 
         <li>
           Add in the <code>ts</code> file the following code that handles the
           open and close state of the tooltip:
-          <pre [innerHTML]="openCloseCode"></pre>
+          <markdown
+            lineNumbers
+            [data]="openCloseCode | language : 'javascript'"
+          >
+          </markdown>
         </li>
 
         <li>
-          You can also add other properties. Please see the API documentation
-          and use them when needed.
+          Feel free to explore additional properties in the
+          <a
+            href="https://www.npmjs.com/package/@controllable-ui/ngx-tooltip"
+            target="_blank"
+            >API documentation</a
+          >
+          and utilize them as needed.
         </li>
 
         <li>
           Add the <code>app-basic-tooltip</code> anywhere you need it in the
           application. Use it like that:
-          <pre>{{ basicTooltipHTMLCode }}</pre>
+          <markdown
+            lineNumbers
+            [data]="basicTooltipHTMLCode | language : 'html'"
+          ></markdown>
         </li>
 
         <li>
@@ -160,7 +167,7 @@
 
           <br />
           This is an example:
-          <pre>{{ scssCode }}</pre>
+          <markdown lineNumbers [data]="scssCode | language : 'css'"></markdown>
         </li>
 
         <li>
@@ -169,7 +176,10 @@
           <code>scrollableContainer</code> prop.
           <p>
             In the ts file: <br />
-            <code>{{ scrollableContainerCode }}</code>
+            <markdown
+              lineNumbers
+              [data]="scrollableContainerCode | language : 'javascript'"
+            ></markdown>
           </p>
 
           <p>
@@ -214,31 +224,16 @@
       id="demo-0"
       [title]="'Customization'"
       [codeLink]="
-        'https://github.com/Ciprian-Anin/controllable-ui-angular/tree/main/projects/demo/src/app/demo-components/'
+        'https://github.com/Ciprian-Anin/controllable-ui-angular/tree/main/projects/demo/src/app/demo-components/customization-demo'
       "
     >
       <p class="demo-info">
         Here are some examples of customizing the component.
       </p>
 
-      <div
-        class="demo-content"
-        style="display: flex; gap: 0.5rem; flex-wrap: wrap"
-      >
-        <app-light-tooltip-customized
-          [scrollableContainer]="scrollableContainerElement()"
-        />
-
-        <app-bootstrap-tooltip-customized
-          [scrollableContainer]="scrollableContainerElement()"
-        />
-
-        <app-html-content-tooltip-customized
-          [scrollableContainer]="scrollableContainerElement()"
-        />
-
-        <app-tooltip-with-close-action-demo
-          [scrollableContainer]="scrollableContainerElement()"
+      <div class="demo-content">
+        <app-customization-demo
+          [scrollableContainerElement]="scrollableContainerElement()"
         />
       </div>
     </app-demo>
@@ -255,10 +250,7 @@
         indicating which element it refers to.
       </p>
 
-      <div
-        class="demo-content"
-        style="display: flex; gap: 0.5rem; flex-wrap: wrap"
-      >
+      <div class="demo-content">
         <app-tooltip-with-arrow
           [scrollableContainer]="scrollableContainerElement()"
         />
@@ -269,7 +261,7 @@
       id="demo-with-distance-from-anchor"
       [title]="'Distance from anchor'"
       [codeLink]="
-        'https://github.com/Ciprian-Anin/controllable-ui-angular/tree/main/projects/demo/src/app/demo-components/'
+        'https://github.com/Ciprian-Anin/controllable-ui-angular/tree/main/projects/demo/src/app/demo-components/tooltip-with-distance-from-anchor'
       "
     >
       <p class="demo-info">
@@ -291,36 +283,16 @@
       id="triggers-demo"
       [title]="'Triggers'"
       [codeLink]="
-        'https://github.com/Ciprian-Anin/controllable-ui-angular/tree/main/projects/demo/src/app/demo-components/'
+        'https://github.com/Ciprian-Anin/controllable-ui-angular/tree/main/projects/demo/src/app/demo-components/triggers-demo'
       "
     >
       <div
         class="demo-content"
         style="display: flex; gap: 0.5rem; flex-wrap: wrap"
       >
-        <app-basic-tooltip
-          [scrollableContainer]="scrollableContainerElement()"
-          [triggerActions]="['hover']"
-        >
-          <button class="relative-element">HOVER</button>
-          <span class="message"> Add </span>
-        </app-basic-tooltip>
-
-        <app-basic-tooltip
-          [scrollableContainer]="scrollableContainerElement()"
-          [triggerActions]="['focus']"
-        >
-          <button class="relative-element">FOCUS</button>
-          <span class="message"> Add </span>
-        </app-basic-tooltip>
-
-        <app-basic-tooltip
-          [scrollableContainer]="scrollableContainerElement()"
-          [triggerActions]="['click']"
-        >
-          <button class="relative-element">CLICK</button>
-          <span class="message"> Add </span>
-        </app-basic-tooltip>
+        <app-triggers-demo
+          [scrollableContainerElement]="scrollableContainerElement()"
+        />
       </div>
     </app-demo>
 
@@ -328,34 +300,16 @@
       id="variable-width-demo"
       [title]="'Variable width'"
       [codeLink]="
-        'https://github.com/Ciprian-Anin/controllable-ui-angular/tree/main/projects/demo/src/app/demo-components/'
+        'https://github.com/Ciprian-Anin/controllable-ui-angular/tree/main/projects/demo/src/app/demo-components/variable-width-demo'
       "
     >
       <div
         class="demo-content"
         style="display: flex; gap: 0.5rem; flex-wrap: wrap"
       >
-        <app-basic-tooltip [scrollableContainer]="scrollableContainerElement()">
-          <button class="relative-element">Custom Width [200px]</button>
-          <div class="message" style="max-width: 200px">
-            Aliquam eget finibus ante, non facilisis lectus. Sed vitae dignissim
-            est, vel aliquam tellus. Praesent non nunc mollis, fermentum neque
-            at, semper arcu. Nullam eget est sed sem iaculis gravida eget vitae
-            justo.
-          </div>
-        </app-basic-tooltip>
-
-        <app-basic-tooltip [scrollableContainer]="scrollableContainerElement()">
-          <button class="relative-element">Custom Width [500px]</button>
-          <div class="message" style="max-width: 500px">
-            Aliquam eget finibus ante, non facilisis lectus. Sed vitae dignissim
-            est, vel aliquam tellus. Praesent non nunc mollis, fermentum neque
-            at, semper arcu. Nullam eget est sed sem iaculis gravida eget vitae
-            justo.
-          </div>
-        </app-basic-tooltip>
-
-        <app-no-wrapping-width-tooltip />
+        <app-variable-width-demo
+          [scrollableContainerElement]="scrollableContainerElement()"
+        />
       </div>
     </app-demo>
 
@@ -363,7 +317,7 @@
       id="interactive-demo"
       [title]="'Interactive'"
       [codeLink]="
-        'https://github.com/Ciprian-Anin/controllable-ui-angular/tree/main/projects/demo/src/app/demo-components/'
+        'https://github.com/Ciprian-Anin/controllable-ui-angular/tree/main/projects/demo/src/app/demo-components/interactive-demo'
       "
     >
       <p class="demo-info">
@@ -378,12 +332,9 @@
       </p>
 
       <div class="demo-content">
-        <app-basic-tooltip [scrollableContainer]="scrollableContainerElement()">
-          <button class="relative-element">Default - interactive</button>
-          <span class="message">
-            Hover this tooltip and select its content
-          </span>
-        </app-basic-tooltip>
+        <app-interactive-demo
+          [scrollableContainerElement]="scrollableContainerElement()"
+        />
       </div>
     </app-demo>
 
@@ -391,7 +342,7 @@
       id="disabled-elements-demo"
       [title]="'Disabled elements'"
       [codeLink]="
-        'https://github.com/Ciprian-Anin/controllable-ui-angular/tree/main/projects/demo/src/app/demo-components/'
+        'https://github.com/Ciprian-Anin/controllable-ui-angular/tree/main/projects/demo/src/app/demo-components/disabled-elements-demo'
       "
     >
       <p class="demo-info">
@@ -400,10 +351,9 @@
       </p>
 
       <div class="demo-content">
-        <app-basic-tooltip [scrollableContainer]="scrollableContainerElement()">
-          <button class="relative-element" disabled>A Disabled Button</button>
-          <span class="message"> Add </span>
-        </app-basic-tooltip>
+        <app-disabled-elements-demo
+          [scrollableContainerElement]="scrollableContainerElement()"
+        />
       </div>
     </app-demo>
 
@@ -411,7 +361,7 @@
       id="transitions-demo"
       [title]="'Transitions'"
       [codeLink]="
-        'https://github.com/Ciprian-Anin/controllable-ui-angular/tree/main/projects/demo/src/app/demo-components/'
+        'https://github.com/Ciprian-Anin/controllable-ui-angular/tree/main/projects/demo/src/app/demo-components/transitions-demo'
       "
     >
       <p class="demo-info">Use a different transition.</p>
@@ -420,17 +370,8 @@
         class="demo-content"
         style="display: flex; gap: 0.5rem; flex-wrap: wrap"
       >
-        <app-basic-tooltip [scrollableContainer]="scrollableContainerElement()">
-          <button class="relative-element">GROW (default)</button>
-          <span class="message"> Add </span>
-        </app-basic-tooltip>
-
-        <app-fade-transition-tooltip
-          [scrollableContainer]="scrollableContainerElement()"
-        />
-
-        <app-zoom-transition-tooltip
-          [scrollableContainer]="scrollableContainerElement()"
+        <app-transitions-demo
+          [scrollableContainerElement]="scrollableContainerElement()"
         />
       </div>
     </app-demo>
@@ -439,7 +380,7 @@
       id="showing-and-hiding-with-delay-demo"
       [title]="'Showing and hiding with delay'"
       [codeLink]="
-        'https://github.com/Ciprian-Anin/controllable-ui-angular/tree/main/projects/demo/src/app/demo-components/'
+        'https://github.com/Ciprian-Anin/controllable-ui-angular/tree/main/projects/demo/src/app/demo-components/showing-and-hiding-with-delay-demo'
       "
     >
       <p class="demo-info">
@@ -453,19 +394,9 @@
         class="demo-content"
         style="display: flex; gap: 0.5rem; flex-wrap: wrap"
       >
-        <app-basic-tooltip [scrollableContainer]="scrollableContainerElement()">
-          <button class="relative-element">Default - [100ms, 150ms]</button>
-          <span class="message"> Add </span>
-        </app-basic-tooltip>
-
-        <app-basic-tooltip
-          [scrollableContainer]="scrollableContainerElement()"
-          [enterDelay]="500"
-          [leaveDelay]="200"
-        >
-          <button class="relative-element">Custom - [500ms, 200ms]</button>
-          <span class="message"> Add </span>
-        </app-basic-tooltip>
+        <app-showing-and-hiding-with-delay-demo
+          [scrollableContainerElement]="scrollableContainerElement()"
+        />
       </div>
     </app-demo>
 
@@ -473,7 +404,7 @@
       id="positioned-tooltips"
       [title]="'Positioned tooltips'"
       [codeLink]="
-        'https://github.com/Ciprian-Anin/controllable-ui-angular/tree/main/projects/demo/src/app/demo-components/'
+        'https://github.com/Ciprian-Anin/controllable-ui-angular/tree/main/projects/demo/src/app/demo-components/positioned-tooltips'
       "
     >
       <p class="demo-info">
@@ -491,7 +422,7 @@
       id="positioned-tooltips-with-long-content-demo"
       [title]="'Positioned Tooltips With Long Content'"
       [codeLink]="
-        'https://github.com/Ciprian-Anin/controllable-ui-angular/tree/main/projects/demo/src/app/demo-components/'
+        'https://github.com/Ciprian-Anin/controllable-ui-angular/tree/main/projects/demo/src/app/demo-components/positioned-tooltip-with-long-content'
       "
     >
       <p class="demo-info">Tooltips with long content.</p>
@@ -507,7 +438,7 @@
       id="demo-2"
       [title]="'Square Corners With Tooltips Demo'"
       [codeLink]="
-        'https://github.com/Ciprian-Anin/controllable-ui-angular/tree/main/projects/demo/src/app/demo-components/'
+        'https://github.com/Ciprian-Anin/controllable-ui-angular/tree/main/projects/demo/src/app/demo-components/tooltip-corners-square-demo'
       "
     >
       <app-tooltip-corners-square-demo
@@ -520,7 +451,7 @@
       id="demo-3"
       [title]="'Grid With Tooltips Demo'"
       [codeLink]="
-        'https://github.com/Ciprian-Anin/controllable-ui-angular/tree/main/projects/demo/src/app/demo-components/'
+        'https://github.com/Ciprian-Anin/controllable-ui-angular/tree/main/projects/demo/src/app/demo-components/grid-with-tooltips-demo'
       "
     >
       <app-grid-with-tooltips-demo class="demo-content" />
@@ -530,7 +461,7 @@
       id="table-demo"
       [title]="'Table With Tooltips Demo'"
       [codeLink]="
-        'https://github.com/Ciprian-Anin/controllable-ui-angular/tree/main/projects/demo/src/app/demo-components/'
+        'https://github.com/Ciprian-Anin/controllable-ui-angular/tree/main/projects/demo/src/app/demo-components/table-with-tooltips-demo'
       "
     >
       <app-table-with-tooltips-demo class="demo-content" />

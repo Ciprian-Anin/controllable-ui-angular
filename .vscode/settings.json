@@ -1,0 +1,35 @@
+{
+  "git.openRepositoryInParentFolders": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // OPTIONAL
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.stickyScroll.enabled": true,
+  "workbench.tree.enableStickyScroll": true,
+  "angular-schematics.schematicsDefaultOptions": {
+    "angular-*": {
+      "externalTemplate": true,
+      "style": "scss"
+    },
+    "angular-component": {
+      "skipChangeDetectionOnPush": false,
+      "skipDisplayBlock": true
+    }
+  },
+  "cSpell.words": [
+    "okaidia",
+    "popovertarget",
+    "prismjs"
+  ]
+}

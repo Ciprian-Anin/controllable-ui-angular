@@ -18,8 +18,8 @@ import {
   standalone: true,
   imports: [
     CommonModule,
-    NgxTooltipComponent
-  ],
+    NgxTooltipComponent,
+],
   templateUrl: './basic-tooltip.component.html',
   styleUrl: './basic-tooltip.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
