@@ -1,5 +1,13 @@
 # Controllable UI - Angular Library ⚡️
 
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Ciprian-Anin/controllable-ui-angular/blob/HEAD/LICENSE)
+[![npm version](https://img.shields.io/npm/v/@controllable-ui/ngx-tooltip.svg)](https://www.npmjs.com/package/@controllable-ui/ngx-tooltip)
+[![npm downloads](https://img.shields.io/npm/dm/@controllable-ui/ngx-tooltip.svg)](https://www.npmjs.com/package/@controllable-ui/ngx-tooltip)
+
+<!-- [![Renovate status](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://github.com/Ciprian-Anin/controllable-ui-angular/issues/27062) -->
+
+<!-- [![Average time to resolve an issue](https://isitmaintained.com/badge/resolution/Ciprian-Anin/controllable-ui-angular.svg)](https://isitmaintained.com/project/Ciprian-Anin/controllable-ui-angular "Average time to resolve an issue") -->
+
 > ✨ Check out the demo [here](https://ciprian-anin.github.io/controllable-ui-angular/).
 
 # Tooltip
@@ -47,21 +55,7 @@ Ensure you have the necessary dependencies and the environment set up for compil
 ### Create the Basic Tooltip Component with desired behavior
 
 ```html
-<ngx-tooltip 
-  [arrow]="arrow()" 
-  [triggerActions]="triggerActions()" 
-  [tooltipRootClass]="tooltipRootClass()" 
-  [scrollableContainer]="scrollableContainer()" 
-  [open]="dialogIsOpen()" 
-  [enterDelay]="enterDelay()" 
-  [leaveDelay]="leaveDelay()" 
-  [preferredPlacement]="preferredPlacement()" 
-  [placementStrategy]="placementStrategy()" 
-  [dialogMinMaxSizes]="dialogMinMaxSizes()" 
-  [dialogOffset]="dialogOffset()" 
-  (onOpen$)="handleOpen$()" 
-  (onClose$)="handleClose$()"
->
+<ngx-tooltip [arrow]="arrow()" [triggerActions]="triggerActions()" [tooltipRootClass]="tooltipRootClass()" [scrollableContainer]="scrollableContainer()" [open]="dialogIsOpen()" [enterDelay]="enterDelay()" [leaveDelay]="leaveDelay()" [preferredPlacement]="preferredPlacement()" [placementStrategy]="placementStrategy()" [dialogMinMaxSizes]="dialogMinMaxSizes()" [dialogOffset]="dialogOffset()" (onOpen$)="handleOpen$()" (onClose$)="handleClose$()">
   <span class="relative-element">
     <ng-content select=".relative-element" />
   </span>
@@ -81,10 +75,7 @@ import { Placement } from "../../components/tooltip/types";
 @Component({
   selector: "app-basic-tooltip",
   standalone: true,
-  imports: [
-    CommonModule, 
-    NgxTooltipComponent
-  ],
+  imports: [CommonModule, NgxTooltipComponent],
   templateUrl: "./basic-tooltip.component.html",
   styleUrl: "./basic-tooltip.component.scss",
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -124,10 +115,7 @@ export class BasicTooltipComponent {
 ### How to use the created `BasicTooltipComponent` 🎉
 
 ```html
-<app-basic-tooltip 
- [scrollableContainer]="scrollableContainerElement()" 
- [tooltipRootClass]="'my-amazing-tooltip'"
->
+<app-basic-tooltip [scrollableContainer]="scrollableContainerElement()" [tooltipRootClass]="'my-amazing-tooltip'">
   <button class="relative-element">Default - interactive</button>
   <span class="message"> Hover this tooltip and select its content </span>
 </app-basic-tooltip>
@@ -137,12 +125,7 @@ export class BasicTooltipComponent {
 @Component({
   selector: "app-root",
   standalone: true,
-  imports: [
-    RouterOutlet, 
-    CommonModule,
-
-    BasicTooltipComponent
-  ],
+  imports: [RouterOutlet, CommonModule, BasicTooltipComponent],
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.scss",
 })

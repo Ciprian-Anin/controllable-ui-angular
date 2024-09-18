@@ -118,10 +118,8 @@
         <li>
           Add in the <code>ts</code> file the following code that handles the
           open and close state of the tooltip:
-          <markdown
-            lineNumbers
-            [data]="openCloseCode | language : 'javascript'"
-          >
+
+          <markdown lineNumbers [data]="tsFileCode | language : 'javascript'">
           </markdown>
         </li>
 
@@ -130,14 +128,16 @@
           <a
             href="https://www.npmjs.com/package/@controllable-ui/ngx-tooltip"
             target="_blank"
-            >API documentation</a
           >
+            API documentation
+          </a>
           and utilize them as needed.
         </li>
 
         <li>
           Add the <code>app-basic-tooltip</code> anywhere you need it in the
           application. Use it like that:
+
           <markdown
             lineNumbers
             [data]="basicTooltipHTMLCode | language : 'html'"
@@ -158,7 +158,7 @@
           </div>
 
           <div>
-            NOTE: The custom style should be globally to be applied. In this
+            📝NOTE: The custom style should be globally to be applied. In this
             case we need to add in the component decorator the encapsulation of
             the css/scss to be with <code>None</code> value:
             <br />
@@ -167,15 +167,17 @@
 
           <br />
           This is an example:
+
           <markdown lineNumbers [data]="scssCode | language : 'css'"></markdown>
         </li>
 
         <li>
-          NOTE: If you want the tooltip to be relative to the scrollable
+          📝NOTE: If you want the tooltip to be relative to the scrollable
           container you should provide it in the
           <code>scrollableContainer</code> prop.
           <p>
             In the ts file: <br />
+
             <markdown
               lineNumbers
               [data]="scrollableContainerCode | language : 'javascript'"

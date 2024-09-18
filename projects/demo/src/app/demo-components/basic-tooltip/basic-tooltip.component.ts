@@ -8,18 +8,12 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 
-import {
-  NgxTooltipComponent,
-  Placement,
-} from '@controllable-ui/ngx-tooltip';
+import { NgxTooltipComponent, Placement } from '@controllable-ui/ngx-tooltip';
 
 @Component({
   selector: 'app-basic-tooltip',
   standalone: true,
-  imports: [
-    CommonModule,
-    NgxTooltipComponent,
-],
+  imports: [CommonModule, NgxTooltipComponent],
   templateUrl: './basic-tooltip.component.html',
   styleUrl: './basic-tooltip.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -27,7 +21,6 @@ import {
 })
 export class BasicTooltipComponent {
   arrow = input<boolean>(false);
-  // triggerActions = input<('hover' | 'focus' | 'click')[]>(['click']);
   triggerActions = input<('hover' | 'focus' | 'click')[]>(['hover', 'focus']);
   tooltipRootClass = input<string>();
   preferredPlacement = input<Placement>('bottom');

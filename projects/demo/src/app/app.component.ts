@@ -62,6 +62,8 @@ export class AppComponent {
 
   tooltipHtmlCode = `<ngx-tooltip
   [scrollableContainer]="scrollableContainer()"
+  [tooltipRootClass]="tooltipRootClass()"
+  [arrow]="arrow()"
   [open]="dialogIsOpen()"
   (onOpen$)="handleOpen$()"
   (onClose$)="handleClose$()"
@@ -74,7 +76,11 @@ export class AppComponent {
   </span>
 </ngx-tooltip>`;
 
-  openCloseCode = `dialogIsOpen = signal<boolean>(false);
+  tsFileCode = `scrollableContainer = input<ElementRef<any>>();
+tooltipRootClass = input<string>();
+arrow = input<boolean>(false);
+
+dialogIsOpen = signal<boolean>(false);
 
 handleOpen$ = () => {
   this.dialogIsOpen.set(true);
