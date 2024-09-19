@@ -1,5 +1,7 @@
 # Controllable UI - Angular Library ⚡️
 
+> ✨ Check out the demo [here](https://ciprian-anin.github.io/controllable-ui-angular/).
+
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Ciprian-Anin/controllable-ui-angular/blob/HEAD/LICENSE)
 [![npm version](https://img.shields.io/npm/v/@controllable-ui/ngx-tooltip.svg)](https://www.npmjs.com/package/@controllable-ui/ngx-tooltip)
 [![npm downloads](https://img.shields.io/npm/dm/@controllable-ui/ngx-tooltip.svg)](https://www.npmjs.com/package/@controllable-ui/ngx-tooltip)
@@ -7,8 +9,6 @@
 <!-- [![Renovate status](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://github.com/Ciprian-Anin/controllable-ui-angular/issues/27062) -->
 
 <!-- [![Average time to resolve an issue](https://isitmaintained.com/badge/resolution/Ciprian-Anin/controllable-ui-angular.svg)](https://isitmaintained.com/project/Ciprian-Anin/controllable-ui-angular "Average time to resolve an issue") -->
-
-> ✨ Check out the demo [here](https://ciprian-anin.github.io/controllable-ui-angular/).
 
 # Tooltip
 
@@ -31,8 +31,8 @@
 
 | Library Version | Angular Version |
 | --------------- | --------------- |
-| 0.0.6           | 17.x.x          |
-| 0.0.6           | 18.x.x          |
+| 0.0.7           | 17.x.x          |
+| 0.0.7           | 18.x.x          |
 
 ## Installation
 
