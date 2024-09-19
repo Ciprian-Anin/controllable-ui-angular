@@ -27,6 +27,13 @@
   - immediately reposition the tooltip when space is limited
   - keep the current placement as long as it fits within the min/max tooltip sizes.
 
+## Angular Version Compatibility
+
+| Library Version | Angular Version |
+| --------------- | --------------- |
+| 0.0.6           | 17.x.x          |
+| 0.0.6           | 18.x.x          |
+
 ## Installation
 
 ```bash
