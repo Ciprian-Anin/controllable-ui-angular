@@ -12,10 +12,7 @@ import { NgxTooltipComponent } from '@controllable-ui/ngx-tooltip';
 @Component({
   selector: 'app-tooltip-with-close-action-demo',
   standalone: true,
-  imports: [
-    CommonModule,
-    NgxTooltipComponent
-  ],
+  imports: [CommonModule, NgxTooltipComponent],
   templateUrl: './tooltip-with-close-action-demo.component.html',
   styleUrl: './tooltip-with-close-action-demo.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

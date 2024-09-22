@@ -15,9 +15,7 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 
-import {
-  NgxTooltipArrowComponent,
-} from './ngx-tooltip-arrow/ngx-tooltip-arrow.component';
+import { NgxTooltipArrowComponent } from './ngx-tooltip-arrow/ngx-tooltip-arrow.component';
 import { Placement } from './types';
 import {
   getAvailablePlacementFromTheOnesToBeTried,
@@ -144,13 +142,17 @@ export class NgxTooltipComponent implements OnChanges {
   leaveDelay = input<number>(150);
   triggerActions = input<('hover' | 'focus' | 'click')[]>(['hover', 'focus']);
   arrow = input<boolean>(false);
+  arrowSize = computed<number>(() => (this.arrow() ? 12 : 0));
   dialogOffset = input<number>(5);
-
   computedDialogOffset = computed(() =>
     this.arrow()
       ? this.dialogOffset() - this.arrowSize() / 2
       : this.dialogOffset()
   );
+  bridgeSize = computed<number>(
+    () => this.computedDialogOffset() + this.arrowSize()
+  );
+
   scrollableContainer = input<ElementRef>();
   tooltipRootClass = input<string>();
   tooltipClass = input<string>();
@@ -187,7 +189,6 @@ export class NgxTooltipComponent implements OnChanges {
   onOpen$ = output();
   onClose$ = output();
 
-  arrowSize = computed<number>(() => (this.arrow() ? 12 : 0));
   tooltipId = generateRandomNumber();
 
   relativeElementRef = viewChild<ElementRef>('relativeElementRef');
@@ -264,14 +265,6 @@ export class NgxTooltipComponent implements OnChanges {
       this.dialogRef() &&
       this.relativeElementRef()
     ) {
-      // remove maxHeight & maxWidth to compute availableSize properly
-      this.dialogPositionStyle.set({
-        ...this.dialogPositionStyle(),
-        maxHeight: '',
-        maxWidth: '',
-      });
-      await nextTickRender(); // wait to have dialog rendered without maxHeight & maxWidth
-
       // compute placement of dialog using the dialogRef which doesn't include bridge,
       // which is unknown before knowing the next dialog placement.
       // We use dialogOffset to properly take the bridge into account when computing the available space & placement
@@ -308,7 +301,7 @@ export class NgxTooltipComponent implements OnChanges {
             this.dialogPositionStyle.set({
               ...this.dialogPositionStyle(),
               maxHeight: `${
-                availablePosition.availableSize - this.computedDialogOffset()
+                availablePosition.availableSize - this.bridgeSize()
               }px`,
             });
             break;

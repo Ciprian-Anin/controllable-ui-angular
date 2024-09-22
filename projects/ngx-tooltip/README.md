@@ -16,6 +16,7 @@
 
 ## Features
 
+- **Uses new browser Popover API**: Learn more [here](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API) (check [browser compatibility](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API#browser_compatibility)).
 - **HTML content support**: Supports HTML content, allowing for richer and more flexible tooltip messages.
 - **Customizable style & animations**: Supports customizable styles and animations by exposing CSS classes for different parts of the tooltip.
 - **Dynamic Placement**: Automatically adjusts the tooltip placement based on available space.
@@ -227,28 +228,29 @@ These class names are useful for styling with CSS. They are applied to the compo
 
 #### Class Names
 
-| **Class Name**                                  | **Description**                                                                               |
-| ----------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `.ngxTooltip-arrow`                             | Styles applied to the arrow element of the tooltip.                                           |
-| `.ngxTooltip-dialog-with-bridge`                | Styles applied to the tooltip dialog container.                                               |
-| `.ngxTooltip-inner-dialog-with-bridge`          | Styles applied to the inner container of the tooltip dialog.                                  |
-| `.ngxTooltip-animated-inner-dialog-with-bridge` | Styles applied to the animated container of the tooltip dialog.                               |
-| `.ngxTooltip-tooltip`                           | Styles applied to the tooltip's content box.                                                  |
-| `.ngxTooltip-placement-top-start`               | Styles applied to the tooltip's content box when the placement is "top-start".                |
-| `.ngxTooltip-placement-top`                     | Styles applied to the tooltip's content box when the placement is "top".                      |
-| `.ngxTooltip-placement-top-end`                 | Styles applied to the tooltip's content box when the placement is "top-end".                  |
-| `.ngxTooltip-placement-bottom-start`            | Styles applied to the tooltip's content box when the placement is "bottom-start".             |
-| `.ngxTooltip-placement-bottom`                  | Styles applied to the tooltip's content box when the placement is "bottom".                   |
-| `.ngxTooltip-placement-bottom-end`              | Styles applied to the tooltip's content box when the placement is "bottom-end".               |
-| `.ngxTooltip-placement-left-start`              | Styles applied to the tooltip's content box when the placement is "left-start".               |
-| `.ngxTooltip-placement-left`                    | Styles applied to the tooltip's content box when the placement is "left".                     |
-| `.ngxTooltip-placement-left-end`                | Styles applied to the tooltip's content box when the placement is "left-end".                 |
-| `.ngxTooltip-placement-right-start`             | Styles applied to the tooltip's content box when the placement is "right-start".              |
-| `.ngxTooltip-placement-right`                   | Styles applied to the tooltip's content box when the placement is "right".                    |
-| `.ngxTooltip-placement-right-end`               | Styles applied to the tooltip's content box when the placement is "right-end".                |
-| `.ngxTooltip-show`                              | Styles applied to the tooltip when it is visible, triggering the `ngxTooltip-show` animation. |
-| `.ngxTooltip-hide`                              | Styles applied to the tooltip when it is hidden, triggering the `ngxTooltip-hide` animation.  |
-| `.ngxTooltip-relative-element`                  | Styles applied to the relative element that the tooltip is anchored to.                       |
+| **Class Name**                                  | **Description**                                                                                             |
+| ----------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `.ngxTooltip-root-container`                    | Styles applied to the root container of the tooltip (it holds the relative element and the tooltip dialog). |
+| `.ngxTooltip-arrow`                             | Styles applied to the arrow element of the tooltip.                                                         |
+| `.ngxTooltip-dialog-with-bridge`                | Styles applied to the tooltip dialog container.                                                             |
+| `.ngxTooltip-inner-dialog-with-bridge`          | Styles applied to the inner container of the tooltip dialog.                                                |
+| `.ngxTooltip-animated-inner-dialog-with-bridge` | Styles applied to the animated container of the tooltip dialog.                                             |
+| `.ngxTooltip-tooltip`                           | Styles applied to the tooltip's content box.                                                                |
+| `.ngxTooltip-placement-top-start`               | Styles applied to the tooltip's content box when the placement is "top-start".                              |
+| `.ngxTooltip-placement-top`                     | Styles applied to the tooltip's content box when the placement is "top".                                    |
+| `.ngxTooltip-placement-top-end`                 | Styles applied to the tooltip's content box when the placement is "top-end".                                |
+| `.ngxTooltip-placement-bottom-start`            | Styles applied to the tooltip's content box when the placement is "bottom-start".                           |
+| `.ngxTooltip-placement-bottom`                  | Styles applied to the tooltip's content box when the placement is "bottom".                                 |
+| `.ngxTooltip-placement-bottom-end`              | Styles applied to the tooltip's content box when the placement is "bottom-end".                             |
+| `.ngxTooltip-placement-left-start`              | Styles applied to the tooltip's content box when the placement is "left-start".                             |
+| `.ngxTooltip-placement-left`                    | Styles applied to the tooltip's content box when the placement is "left".                                   |
+| `.ngxTooltip-placement-left-end`                | Styles applied to the tooltip's content box when the placement is "left-end".                               |
+| `.ngxTooltip-placement-right-start`             | Styles applied to the tooltip's content box when the placement is "right-start".                            |
+| `.ngxTooltip-placement-right`                   | Styles applied to the tooltip's content box when the placement is "right".                                  |
+| `.ngxTooltip-placement-right-end`               | Styles applied to the tooltip's content box when the placement is "right-end".                              |
+| `.ngxTooltip-show`                              | Styles applied to the tooltip when it is visible, triggering the `ngxTooltip-show` animation.               |
+| `.ngxTooltip-hide`                              | Styles applied to the tooltip when it is hidden, triggering the `ngxTooltip-hide` animation.                |
+| `.ngxTooltip-relative-element`                  | Styles applied to the relative element that the tooltip is anchored to.                                     |
 
 ### Animation Classes
 

@@ -1,6 +1,6 @@
 {
   "name": "@controllable-ui/ngx-tooltip",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "main": "./src/lib/index.ts",
   "repository": {
     "type": "git",

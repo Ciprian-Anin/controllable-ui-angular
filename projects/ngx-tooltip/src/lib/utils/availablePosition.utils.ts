@@ -1,10 +1,6 @@
 import { Placement } from '../types';
-import {
-  getDocumentHeight,
-  getDocumentWidth,
-} from './utils';
+import { getDocumentHeight, getDocumentWidth } from './utils';
 
-// @ts-ignore
 /**
  * In order to avoid the annoying flickering from top to bottom or from left to right
  * in case one side size has mare space than other, after we already have dialog placed on a side,
@@ -50,7 +46,7 @@ export function getDialogAvailablePositionConsideringKeepingCurrentPlacement({
         ? getAvailablePlacementFromTheOnesToBeTried(
             placementsToBeTried,
             dialogElement,
-            relativeElement,
+            relativeElement
           )
         : maxAvailableSpaceOnTop > dialogMaxHeight
         ? {
@@ -73,7 +69,7 @@ export function getDialogAvailablePositionConsideringKeepingCurrentPlacement({
         ? getAvailablePlacementFromTheOnesToBeTried(
             placementsToBeTried,
             dialogElement,
-            relativeElement,
+            relativeElement
           )
         : maxAvailableSpaceOnBottom > dialogMaxHeight
         ? {
@@ -96,7 +92,7 @@ export function getDialogAvailablePositionConsideringKeepingCurrentPlacement({
         ? getAvailablePlacementFromTheOnesToBeTried(
             placementsToBeTried,
             dialogElement,
-            relativeElement,
+            relativeElement
           )
         : maxAvailableSpaceOnLeft > dialogMaxWidth
         ? {
@@ -119,7 +115,7 @@ export function getDialogAvailablePositionConsideringKeepingCurrentPlacement({
         ? getAvailablePlacementFromTheOnesToBeTried(
             placementsToBeTried,
             dialogElement,
-            relativeElement,
+            relativeElement
           )
         : maxAvailableSpaceOnRight > dialogMaxWidth
         ? {
@@ -136,7 +132,7 @@ export function getDialogAvailablePositionConsideringKeepingCurrentPlacement({
       return getAvailablePlacementFromTheOnesToBeTried(
         placementsToBeTried,
         dialogElement,
-        relativeElement,
+        relativeElement
       );
     }
   }
@@ -148,7 +144,7 @@ export function getAvailablePlacementFromTheOnesToBeTried(
     ...restOfPlacements: Placement[]
   ],
   dialogElement: HTMLElement,
-  relativeElement: HTMLElement,
+  relativeElement: HTMLElement
 ) {
   const dialogElementRect = dialogElement.getBoundingClientRect();
   const relativeElementRect = relativeElement.getBoundingClientRect();
@@ -159,36 +155,26 @@ export function getAvailablePlacementFromTheOnesToBeTried(
         case 'top-start':
         case 'top':
         case 'top-end': {
-          return (
-            relativeElementRect.top -
-              (dialogElementRect.height) >=
-            0
-          );
+          return relativeElementRect.top - dialogElementRect.height >= 0;
         }
         case 'bottom-start':
         case 'bottom':
         case 'bottom-end': {
           return (
-            relativeElementRect.bottom +
-              (dialogElementRect.height) <=
+            relativeElementRect.bottom + dialogElementRect.height <=
             getDocumentHeight()
           );
         }
         case 'left-start':
         case 'left':
         case 'left-end': {
-          return (
-            relativeElementRect.left -
-              (dialogElementRect.width) >=
-            0
-          );
+          return relativeElementRect.left - dialogElementRect.width >= 0;
         }
         case 'right-start':
         case 'right':
         case 'right-end': {
           return (
-            relativeElementRect.right +
-              (dialogElementRect.width) <=
+            relativeElementRect.right + dialogElementRect.width <=
             getDocumentWidth()
           );
         }

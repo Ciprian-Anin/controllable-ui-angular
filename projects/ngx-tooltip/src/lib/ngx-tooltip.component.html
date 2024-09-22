@@ -1,4 +1,4 @@
-<div style="display: inline-block; width: 100%;">
+<div class="ngxTooltip-root-container">
   <div
     #relativeElementRef
     class="ngxTooltip-relative-element"
@@ -11,15 +11,14 @@
         ? handleRelativeElementMouseOrFocusLeave($event)
         : undefined
     "
-    (focus)="
+    (focusin)="
       triggerActions().includes('focus') ? handleOpenAction() : undefined
     "
-    (blur)="
+    (focusout)="
       triggerActions().includes('focus')
         ? handleRelativeElementMouseOrFocusLeave($event)
         : undefined
     "
-    [attr.tabIndex]="triggerActions().includes('focus') ? 0 : undefined"
     (click)="
       triggerActions().includes('click') ? handleOpenAction() : undefined
     "
@@ -74,7 +73,6 @@
     <div
       class="ngxTooltip-inner-dialog-with-bridge"
       #dialogRef
-      [attr.tabIndex]="triggerActions().includes('focus') ? 0 : undefined"
       (focusout)="
         triggerActions().includes('focus')
           ? handleMouseOrFocusLeaveDialog($event)

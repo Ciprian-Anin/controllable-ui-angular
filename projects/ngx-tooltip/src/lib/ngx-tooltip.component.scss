@@ -3,6 +3,11 @@
   display: block;
 }
 
+.ngxTooltip-root-container {
+  display: flex;
+  width: 100%;
+}
+
 .ngxTooltip-dialog-with-bridge,
 .ngxTooltip-inner-dialog-with-bridge {
   border: unset;
