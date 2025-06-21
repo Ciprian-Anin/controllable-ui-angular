@@ -118,12 +118,12 @@ export type DefaultStrategyProps = BaseProps & {
 export type Props = DefaultStrategyProps | KeepCurrentPlacementStrategyProps;
 
 @Component({
-    selector: 'ngx-tooltip',
-    imports: [CommonModule, NgxTooltipArrowComponent],
-    templateUrl: './ngx-tooltip.component.html',
-    styleUrl: './ngx-tooltip.component.scss',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    encapsulation: ViewEncapsulation.None
+  selector: 'ngx-tooltip',
+  imports: [CommonModule, NgxTooltipArrowComponent],
+  templateUrl: './ngx-tooltip.component.html',
+  styleUrl: './ngx-tooltip.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None,
 })
 export class NgxTooltipComponent implements OnChanges {
   open = input<boolean>();
@@ -433,60 +433,49 @@ export class NgxTooltipComponent implements OnChanges {
         },
       });
 
-      await new Promise<void>((resolve, reject) => {
-        this.openDialogTimeoutID.set(
-          setTimeout(async () => {
-            // ! check again to make sure we open dialog just if external
-            // ! state specify now that the dialog should be opened
+      this.openDialogTimeoutID.set(
+        setTimeout(async () => {
+          // ! check again to make sure we open dialog just if external
+          // ! state specify now that the dialog should be opened
 
-            if (this.open()) {
-              try {
-                await nextTickRender(); // wait for dialog to have `visibility: hidden` set
-                // before showing it
-                // This is important in order to avoid the display of it on a position
-                // inappropriate with requested/available placement
-                // * (at this moment we don't have the dialog sizes,
-                // * and it is not positioned on requested/available placement)
+          if (this.open()) {
+            await nextTickRender(); // wait for dialog to have `visibility: hidden` set
+            // before showing it
+            // This is important in order to avoid the display of it on a position
+            // inappropriate with requested/available placement
+            // * (at this moment we don't have the dialog sizes,
+            // * and it is not positioned on requested/available placement)
 
-                const positionDialogAndMakeItVisible = new ResizeObserver(
-                  async () => {
-                    try {
-                      await this.positionDialog();
-                      await this.positionDialog(); // call a second time to make sure that the size of dialog is computed properly
-                      // (the first time when we call positionDialog the browser doesn't compute the height/width of dialog properly)
+            const positionDialogAndMakeItVisible = new ResizeObserver(
+              async () => {
+                await this.positionDialog();
+                await this.positionDialog(); // call a second time to make sure that the size of dialog is computed properly
+                // (the first time when we call positionDialog the browser doesn't compute the height/width of dialog properly)
 
-                      this.dialogPositionStyle.set({
-                        ...this.dialogPositionStyle(),
-                        value: {
-                          ...this.dialogPositionStyle().value,
-                          visibility: 'visible',
-                        },
-                      });
+                this.dialogPositionStyle.set({
+                  ...this.dialogPositionStyle(),
+                  value: {
+                    ...this.dialogPositionStyle().value,
+                    visibility: 'visible',
+                  },
+                });
 
-                      this.dialogAnimationState.set('show');
-                      resolve();
+                this.dialogAnimationState.set('show');
 
-                      positionDialogAndMakeItVisible.disconnect();
-                    } catch {
-                      reject();
-                    }
-                  }
-                );
-
-                if (this.dialogRef()) {
-                  positionDialogAndMakeItVisible.observe(
-                    this.dialogRef()!.nativeElement
-                  );
-                  this.dialogWithBridgeRef()?.nativeElement.showPopover();
-                  this.dialogIsOpenLocalState.set(true);
-                }
-              } catch {
-                reject();
+                positionDialogAndMakeItVisible.disconnect();
               }
+            );
+
+            if (this.dialogRef()) {
+              positionDialogAndMakeItVisible.observe(
+                this.dialogRef()!.nativeElement
+              );
+              this.dialogWithBridgeRef()?.nativeElement.showPopover();
+              this.dialogIsOpenLocalState.set(true);
             }
-          }, this.enterDelay())
-        );
-      });
+          }
+        }, this.enterDelay())
+      );
     }
   };
 
@@ -512,24 +501,17 @@ export class NgxTooltipComponent implements OnChanges {
     }
   };
 
-  scheduleDialogClose = async () => {
+  scheduleDialogClose = () => {
     // check again to make sure we close dialog just if external
     // state specify now that the dialog should be closed
     if (!this.open()) {
       this.dialogAnimationState.set('hide');
 
-      await new Promise<void>((resolve, reject) => {
-        this.closeDialogTimeoutID.set(
-          setTimeout(() => {
-            try {
-              this.closeDialog();
-              resolve();
-            } catch (error) {
-              reject();
-            }
-          }, this.leaveDelay())
-        );
-      });
+      this.closeDialogTimeoutID.set(
+        setTimeout(() => {
+          this.closeDialog();
+        }, this.leaveDelay())
+      );
     }
   };
 
@@ -577,7 +559,7 @@ export class NgxTooltipComponent implements OnChanges {
     } else {
       this.cancelDialogOpen();
       if (this.dialogIsOpenLocalState()) {
-        await this.scheduleDialogClose();
+        this.scheduleDialogClose();
       }
     }
   };
@@ -585,9 +567,10 @@ export class NgxTooltipComponent implements OnChanges {
   handleRelativeElementMouseOrFocusLeave = (event: MouseEvent | FocusEvent) => {
     if (
       this.dialogWithBridgeRef()?.nativeElement !== event.relatedTarget &&
-      !this.dialogWithBridgeRef()?.nativeElement.contains(
-        event.relatedTarget as Node
-      )
+      (!(event.relatedTarget instanceof Node) ||
+        !this.dialogWithBridgeRef()?.nativeElement.contains(
+          event.relatedTarget
+        ))
     ) {
       this.onClose$.emit();
     }
@@ -596,9 +579,8 @@ export class NgxTooltipComponent implements OnChanges {
   handleMouseOrFocusLeaveDialog = async (event: MouseEvent | FocusEvent) => {
     if (
       this.relativeElementRef()?.nativeElement !== event.relatedTarget &&
-      !this.relativeElementRef()?.nativeElement.contains(
-        event.relatedTarget as Node
-      )
+      (!(event.relatedTarget instanceof Node) ||
+        !this.relativeElementRef()?.nativeElement.contains(event.relatedTarget))
     ) {
       this.onClose$.emit();
     }
