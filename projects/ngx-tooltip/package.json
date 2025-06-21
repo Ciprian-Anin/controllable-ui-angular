@@ -1,6 +1,6 @@
 {
   "name": "@controllable-ui/ngx-tooltip",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "main": "./src/lib/index.ts",
   "repository": {
     "type": "git",
@@ -8,8 +8,8 @@
   },
   "license": "MIT",
   "peerDependencies": {
-    "@angular/core": "^17.0.0 || ^18.0.0 || ^19.0.0",
-    "@angular/common": "^17.0.0 || ^18.0.0 || ^19.0.0"
+    "@angular/core": "^17.0.0 || ^18.0.0 || ^19.0.0 || ^20.0.0",
+    "@angular/common": "^17.0.0 || ^18.0.0 || ^19.0.0 || ^20.0.0"
   },
   "dependencies": {
     "tslib": "^2.0.0"
